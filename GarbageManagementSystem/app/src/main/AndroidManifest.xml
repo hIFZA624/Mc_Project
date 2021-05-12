@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GarbageManagementSystem">
-        <activity android:name=".UserRegistration"></activity>
+        <activity android:name=".ViewDriver"></activity>
+        <activity android:name=".CreatDriver" />
+        <activity android:name=".ViewBin" />
+        <activity android:name=".CreatBin" />
+        <activity android:name=".UserRegistration" />
         <activity android:name=".Login" />
         <activity android:name=".UserSelection" />
         <activity android:name=".MainActivity">

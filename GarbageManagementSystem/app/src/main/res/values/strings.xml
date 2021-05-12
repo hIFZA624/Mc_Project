@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">GarbageManagementSystem</string>
+    <string-array name="Load">
+        <item>Low</item>
+        <item>High</item>
+        <item>Medium</item>
+    </string-array>
+    <string-array name="Cycle">
+        <item>Daily</item>
+        <item>Twice</item>
+        <item>Weakly</item>
+    </string-array>
 </resources>

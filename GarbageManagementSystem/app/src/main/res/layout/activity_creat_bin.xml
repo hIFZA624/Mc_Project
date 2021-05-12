@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatBin"
+    android:orientation="vertical"
+    android:background="@color/cardview_light_background">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Form To Creat Bin"
+        android:textColor="@color/purple_500"
+        android:textSize="40sp"
+        android:background="@color/cardview_shadow_end_color"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        ></TextView>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Area"
+    android:textColor="@color/design_default_color_secondary_variant"
+    android:textSize="30sp"
+    style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Area"
+        ></EditText>
+
+
+    <TextView
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:text="Locality"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Locality"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Land Mark"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Land Mark"        ></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        android:textSize="30sp"
+        ></TextView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter City"     ></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assign Driver Email"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Driver Email"     ></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Best Rout"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Best Rout"></EditText>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Load Type" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Cycle Period" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
