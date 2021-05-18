@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -28,5 +29,11 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         },5000);
+
     }
+
+  /*  public void creatbin(View view) {
+        Intent intent=new Intent(getApplicationContext(),CreatBin.class);
+        startActivity(intent);
+    }*/
 }

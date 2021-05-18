@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Form To Creat Driver"
+        android:text="Driver Register"
         android:textColor="@color/purple_500"
         android:textSize="40sp"
         android:background="@color/cardview_shadow_end_color"
@@ -31,6 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Name"
+        android:background="@color/purple_200"
+
         ></EditText>
 
 
@@ -47,6 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Password"
+        android:background="@color/purple_200"
+
         />
     <TextView
         android:layout_width="match_parent"
@@ -59,7 +63,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Mobile Number"        ></EditText>
+        android:hint="Enter Mobile Number"
+        android:background="@color/purple_200"
+        ></EditText>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,7 +77,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Adress"     ></EditText>
+        android:hint="Enter Adress"
+        android:background="@color/purple_200"
+        ></EditText>
 
     <TextView
         android:layout_width="match_parent"
@@ -84,7 +92,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Area"     ></EditText>
+        android:hint="Enter Area"
+        android:background="@color/purple_200"
+        ></EditText>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,7 +107,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter CNIC Number"></EditText>
+        android:hint="Enter CNIC Number"
+        android:background="@color/purple_200"
+        ></EditText>
 
-
+    <Button
+        android:id="@+id/creatdriver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        ></Button>
 </LinearLayout>
