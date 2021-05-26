@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DbHelper extends SQLiteOpenHelper {
+<<<<<<< HEAD
     public static final String FIRST_NAME = "FirstName";
     public static final String LAST_NAME = "LastName";
     public static final String EMAIL_ID = "EmailId";
@@ -39,12 +40,22 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String CyclePeriod = "CyclePeriod";
     public static final String BinId = "BinId";
     public static final String Bin = "Bin";
+=======
+    public static final String TABLE_NAME = "User_table";
+    public static final String COL_1 = "ID";
+    public static final String COL_2 = "firstname";
+    public static final String COL_3 = "lastname";
+    public static final String COL_4 = "email";
+    public static final String COL_5 = "password";
+
+>>>>>>> 500d381e8b8c4de700925e57d45c5813a6687bd5
     public DbHelper(@Nullable Context context) {
-            super(context, "GarbageManagementSystem.db", null, 1);
+
+            super(context, "MyDB.db", null,  1);
         }
         @Override
         public void onCreate(SQLiteDatabase db) {
-            String createTableSTatement = "CREATE TABLE " + User_TABLE + "(" + User_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + FIRST_NAME + " Text, " + LAST_NAME + " Text, " + EMAIL_ID + " Text ," +PASSWORD_ID+"Text)";
+            String createTableSTatement = "CREATE TABLE " + TABLE_NAME + "(" + COL_1 + " Integer PRIMARY KEY AUTOINCREMENT, " + COL_2 + " Text, " + COL_3 + " Text, " + COL_4 + " Text, " + COL_5 + " Text) ";
             db.execSQL(createTableSTatement);
             //CreateDriverTable
             String createTableSTatement2 = "CREATE TABLE " +Driver + "(" + DriverId + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + Mobile + " Text ," +Adress+"Text,"+Area+"Text,"+CNIC+"Text)";
@@ -56,11 +67,14 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
         }
-        public boolean addUser(User user){
+
+        public boolean addUser(User customerModel){
             SQLiteDatabase db = this.getWritableDatabase();
             //Hash map, as we did in bundles
             ContentValues cv = new ContentValues();
+<<<<<<< HEAD
             cv.put(FIRST_NAME, user.getFirstName());
             cv.put(LAST_NAME,user.getLastName());
         cv.put(EMAIL_ID,user.getEmail());
@@ -113,23 +127,33 @@ public class DbHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }
+=======
+            cv.put(COL_2, customerModel.getFirstName());
+            cv.put(COL_3, customerModel.getLastName());
+            cv.put(COL_4, customerModel.getEmail());
+            cv.put(COL_5, customerModel.getPassword());
+
+            //NullCoumnHack
+            long insert = db.insert(TABLE_NAME, null, cv);
+            if (insert == -1) { return false; }
+            else{return true;}
+>>>>>>> 500d381e8b8c4de700925e57d45c5813a6687bd5
     }
     public List<User> getAllRecords(){
         List<User> myList=new ArrayList<>();
-        String query="SELECT * FROM "+User_TABLE;
+        String query="SELECT * FROM "+TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor= db.rawQuery(query,null);
         if(cursor.moveToFirst())
         {
             do{
                 int id=cursor.getInt(0);
-                String firstname=cursor.getString(1);
-                String lastname=cursor.getString(2);
-                String email=cursor.getString(3);
-                String password=cursor.getString(4);
-
-                User user=new User(firstname,lastname,email,password,password,id);
-                myList.add(user);
+                String custname=cursor.getString(1);
+                String LastName=cursor.getString(2);
+                String Email=cursor.getString(3);
+                String Password=cursor.getString(4);
+                User customerModel=new User(custname,LastName,Email,Password,Password,id);
+                myList.add(customerModel);
             }while(cursor.moveToNext());
         }
         cursor.close();
