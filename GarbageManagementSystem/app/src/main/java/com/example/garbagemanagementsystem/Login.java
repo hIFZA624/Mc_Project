@@ -33,7 +33,7 @@ String title;
         List<User> allcustomers=dbHelper.getAllRecords();
         for(int i=0;i<allcustomers.size();i++)
         {
-            User user=allcustomers[i];
+//            User user=allcustomers[i];
 
         }
         //Toast.makeText(Login.this,userName.toString(), Toast.LENGTH_SHORT).show();

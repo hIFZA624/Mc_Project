@@ -28,6 +28,7 @@
 
 
     <EditText
+        android:id="@+id/BinArea"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Area"
@@ -45,6 +46,8 @@
         ></TextView>
 
     <EditText
+
+        android:id="@+id/Locality"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Locality"
@@ -60,6 +63,7 @@
 
         ></TextView>
     <EditText
+        android:id="@+id/Land"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Land Mark"
@@ -74,6 +78,7 @@
         android:textSize="30sp"
         ></TextView>
     <EditText
+        android:id="@+id/City"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter City"
@@ -89,6 +94,7 @@
 
         ></TextView>
     <EditText
+        android:id="@+id/Email"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Driver Email"
@@ -104,6 +110,7 @@
         ></TextView>
 
     <EditText
+        android:id="@+id/Rout"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Best Rout"
@@ -145,5 +152,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit"
+        android:onClick="AddBin"
         ></Button>
 </LinearLayout>

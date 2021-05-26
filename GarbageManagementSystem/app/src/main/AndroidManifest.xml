@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GarbageManagementSystem">
-<<<<<<< HEAD
+
         <activity android:name=".AdminHomePage"></activity>
-=======
+
         <activity android:name=".ViewDriver"></activity>
         <activity android:name=".CreatDriver" />
         <activity android:name=".ViewBin" />
         <activity android:name=".CreatBin" />
->>>>>>> 5591e74380f3387cf34ba19ffae511f445a80175
+
         <activity android:name=".UserRegistration" />
         <activity android:name=".Login" />
         <activity android:name=".UserSelection" />
