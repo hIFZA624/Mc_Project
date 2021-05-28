@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">GarbageManagementSystem</string>
-<<<<<<< HEAD
 
     <string name="open">Open</string>
     <string name="close">Close</string>
@@ -16,8 +15,8 @@
         <item>Weakly</item>
     </string-array>
 
-=======
-    <string name="open">Open</string>
-    <string name="close">Close</string>
->>>>>>> 500d381e8b8c4de700925e57d45c5813a6687bd5
+
+   <!-- <string name="open">Open</string>
+    <string name="close">Close</string>-->
+
 </resources>

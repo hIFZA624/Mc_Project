@@ -33,12 +33,10 @@ String title;
         List<User> allcustomers=dbHelper.getAllRecords();
         for(int i=0;i<allcustomers.size();i++)
         {
-<<<<<<< HEAD
-//            User user=allcustomers[i];
-=======
->>>>>>> 500d381e8b8c4de700925e57d45c5813a6687bd5
 
-        }
+//            User user=allcustomers[i];
+
+        };
         //Toast.makeText(Login.this,userName.toString(), Toast.LENGTH_SHORT).show();
         //Toast.makeText(Login.this,password.toString(), Toast.LENGTH_SHORT).show();
         Intent intent2=new Intent(Login.this,AdminHomePage.class);
