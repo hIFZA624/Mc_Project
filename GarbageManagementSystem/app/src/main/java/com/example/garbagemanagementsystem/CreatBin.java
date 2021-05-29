@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -34,7 +35,7 @@ ArrayAdapter<String> arrayAdapter2;
         setContentView(R.layout.activity_creat_bin);
         Area=findViewById(R.id.BinArea);
         Locality=findViewById(R.id.Locality);
-        DriverEmail=findViewById(R.id.email);
+        DriverEmail=findViewById(R.id.Email);
         BestRout=findViewById(R.id.Rout);
         LandMark=findViewById(R.id.Land);
         City=findViewById(R.id.City);
@@ -47,6 +48,7 @@ ArrayAdapter<String> arrayAdapter2;
 
         arrayAdapter=new ArrayAdapter<String>(CreatBin.this,R.layout.dropdown_item,load);
         drpbox1.setAdapter(arrayAdapter);
+
         arrayAdapter2=new ArrayAdapter<String>(CreatBin.this,R.layout.dropdown_item,cycle);
 
         drpbox2.setAdapter(arrayAdapter2);
@@ -55,11 +57,14 @@ ArrayAdapter<String> arrayAdapter2;
 
     public void AddBin(View view) {
 
-        BinModel bin= new BinModel(Area.getText().toString(),Locality.getText().toString(),DriverEmail.getText().toString(),BestRout.getText().toString(), LandMark.getText().toString(),City.getText().toString(),drpbox1.getText().toString(),drpbox2.getText().toString(),1);
+        String loadtype=drpbox1.getText().toString();
+        String cyclicPeriod=drpbox2.getText().toString();
+        BinModel bin= new BinModel(Area.getText().toString(),Locality.getText().toString(),LandMark.getText().toString(),City.getText().toString(),DriverEmail.getText().toString(),BestRout.getText().toString() ,loadtype,cyclicPeriod,1);
+
         DbHelper dbHelper = new DbHelper(CreatBin.this);
         boolean b = dbHelper.addBin(bin);
         if (b == true)
-            Toast.makeText(CreatBin.this, "Bin aDDED", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CreatBin.this, "Bin ADDED", Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(CreatBin.this, "Bin Not ADDED", Toast.LENGTH_SHORT).show();
 

@@ -2,6 +2,7 @@ package com.example.garbagemanagementsystem;
 
 public class BinModel {
     private String BinArea;
+
     private String Locality;
     private String LandMak;
     private String City;
@@ -10,6 +11,9 @@ public class BinModel {
     private String Load;
     public String CyclicPeriod;
     int id;
+    public  BinModel(){
+
+    }
     public BinModel(String BinArea, String Locality, String LandMak,  String City,String DriverEmail, String BestRout,String Load,String cyclicPeriod,int Id) {
         this.BinArea = BinArea;
         this.Locality= Locality;
