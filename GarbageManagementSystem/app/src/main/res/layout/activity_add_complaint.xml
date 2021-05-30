@@ -57,7 +57,7 @@
         android:inputType="textPersonName"
         android:hint="Enter Title" />
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/complaint"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:ems="10"
