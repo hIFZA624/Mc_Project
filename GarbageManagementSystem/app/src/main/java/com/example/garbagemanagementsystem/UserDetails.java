@@ -39,6 +39,6 @@ public class UserDetails extends AppCompatActivity {
     {
         ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,username);
         myAdapter=new MyAdapter(this,username,id);
-      //  listView.setAdapter(myAdapter);
+        listView.setAdapter(myAdapter);
     }
 }

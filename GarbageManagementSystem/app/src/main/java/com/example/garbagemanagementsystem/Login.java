@@ -34,7 +34,9 @@ String title;
         for(int i=0;i<allcustomers.size();i++)
         {
 
-        }
+//            User user=allcustomers[i];
+
+        };
         //Toast.makeText(Login.this,userName.toString(), Toast.LENGTH_SHORT).show();
         //Toast.makeText(Login.this,password.toString(), Toast.LENGTH_SHORT).show();
         Intent intent2=new Intent(Login.this,AdminHomePage.class);
