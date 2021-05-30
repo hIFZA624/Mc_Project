@@ -67,7 +67,7 @@
                   android:layout_width="80dp"
                   android:layout_height="80dp"
                   android:layout_gravity="center"
-                  android:src="@drawable/complaint1" />
+                  android:src="@drawable/complaint" />
 
               <TextView
                   android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
               <ImageView
                   android:layout_width="80dp"
                   android:layout_height="80dp"
-                  android:src="@drawable/complaint1" />
+                  android:src="@drawable/complaint" />
               <TextView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
