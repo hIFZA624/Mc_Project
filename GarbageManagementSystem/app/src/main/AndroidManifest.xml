@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GarbageManagementSystem" >
+        <activity android:name=".UserHomePage" >
+        </activity>
         <activity android:name=".AddComplaint" >
         </activity>
         <activity android:name=".UserDetails" />
