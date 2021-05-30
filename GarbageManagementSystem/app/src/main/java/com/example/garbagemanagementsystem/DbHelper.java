@@ -190,4 +190,25 @@ public class DbHelper extends SQLiteOpenHelper {
         if (insert == -1) { return false; }
         else{return true;}
     }
+    public ArrayList<UserComplaint> getAllRecordsofComplaint(){
+        ArrayList<UserComplaint> myList=new ArrayList<UserComplaint>();
+        String query="SELECT * FROM "+TABLE_NAMES;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor= db.rawQuery(query,null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                int id=cursor.getInt(0);
+                String title=cursor.getString(1);
+                String complaints=cursor.getString(2);
+                String username=cursor.getString(3);
+
+                UserComplaint complaint=new UserComplaint(title,complaints,username,id);
+                myList.add(complaint);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return  myList;
+    }
 }
