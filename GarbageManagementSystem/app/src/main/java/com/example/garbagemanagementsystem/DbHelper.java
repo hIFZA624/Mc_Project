@@ -40,7 +40,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String CYCLIC_PERIOD = "CyclePeriod";
     public static final String BIN_ID = "BinId";
     public static final String BIN = "Bin";
-
+//UserTable
     public static final String TABLE_NAME = "User_table";
     public static final String COL_1 = "ID";
     public static final String COL_2 = "firstname";
@@ -48,7 +48,12 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COL_4 = "email";
     public static final String COL_5 = "password";
 
-
+    //Table 2
+    public static final String TABLE_NAMES = "Complaint_Table";
+    public static final String COL_11 = "ID";
+    public static final String COL_12 = "Title";
+    public static final String COL_13 = "Complaint";
+    public static final String COL_14 = "CompalintName";
     public DbHelper(@Nullable Context context) {
 
             super(context, "MyDB.db", null,  1);
@@ -63,6 +68,9 @@ public class DbHelper extends SQLiteOpenHelper {
             //CreateBinTable
             String createTableSTatement3 = "CREATE TABLE " +BIN + "(" + BIN_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + BIN_AREA + " Text, " + LOCALITY + " Text, " + LANDMARK + " Text ," + CITY + "Text," + DRIVER_EMAIL + "Text," + BEST_ROUT + "Text," + LOAD_TYPE + "Text," + CYCLIC_PERIOD + "Text)";
             db.execSQL(createTableSTatement3);
+            //Create Complaint Tabel
+            String createTableSTatement4 = "CREATE TABLE " + TABLE_NAMES + "(" + COL_11 + " Integer PRIMARY KEY AUTOINCREMENT, " + COL_12 + " Text, " + COL_13 + " Text, " + COL_14 + " Text) ";
+         db.execSQL(createTableSTatement4);
 
 
         }
@@ -168,5 +176,18 @@ public class DbHelper extends SQLiteOpenHelper {
         return  myList;
     }
 
+    public boolean addComplaint(UserComplaint customerModel){
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
+        cv.put(COL_12, customerModel.getTitle());
+        cv.put(COL_13, customerModel.getComplaint());
+        cv.put(COL_14, customerModel.getUsercomplaint());
 
+
+        //NullCoumnHack
+        long insert = db.insert(TABLE_NAMES, null, cv);
+        if (insert == -1) { return false; }
+        else{return true;}
+    }
 }
