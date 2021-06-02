@@ -40,8 +40,8 @@ ArrayAdapter<String> arrayAdapter2;
         LandMark=findViewById(R.id.Land);
         City=findViewById(R.id.City);
 
-        load=getResources().getStringArray(R.array.Load);
-        cycle=getResources().getStringArray(R.array.Cycle);
+        //load=getResources().getStringArray(R.array.Load);
+        //cycle=getResources().getStringArray(R.array.Cycle);
         drpbox1=findViewById(R.id.autoCompleteTextView);
         drpbox2=findViewById(R.id.autoCompleteTextView2);
 

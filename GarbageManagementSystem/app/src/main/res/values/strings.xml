@@ -3,6 +3,16 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <
+    <
+    <
+    <
+    <
+    <
+    < HEAD
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    =======
 
     <string-array name="Load">
         <item>Low</item>
@@ -16,7 +26,8 @@
     </string-array>
 
 
-   <!-- <string name="open">Open</string>
+    <!-- <string name="open">Open</string>
     <string name="close">Close</string>-->
 
+    >>>>>>> d5b89c7a4515c83737ad610bee8a01c9405e898c
 </resources>
