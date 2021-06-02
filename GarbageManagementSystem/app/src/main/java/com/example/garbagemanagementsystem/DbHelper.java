@@ -114,7 +114,7 @@ public class DbHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-    //AddDriver
+    //Add Bin
     public boolean addBin(BinModel bin) {
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
@@ -167,6 +167,112 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
         return  myList;
     }
+    //Update bin data
+    public boolean UpdateBin(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
 
+        //NullCoumnHack
+        Cursor  cursor=db.rawQuery("Select * from Bin where BinId = ?",new String[]{String.valueOf(id)});
+        cv.put(BIN_AREA, cursor.getString(1));
+        cv.put(LOCALITY, cursor.getString(2));
+        cv.put(LANDMARK, cursor.getString(3));
+        cv.put(CITY,cursor.getString(4));
+        cv.put(DRIVER_EMAIL, cursor.getString(5));
+        cv.put(BEST_ROUT,cursor.getString(6));
+        cv.put(LOAD_TYPE, cursor.getString(7));
+        cv.put(CYCLIC_PERIOD,cursor.getString(8));
+        //NullCoumnHack
+        if(cursor.getCount()>0) {
+            long update = db.update(BIN, cv, "BinId=?", new String[]{String.valueOf(id)});
+            if (update == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        else
+            return false;
+    }
+    //UPdate Driver
+    public boolean UpdateDriver(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
+
+        Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(id)});
+        cv.put(NAME,  cursor.getString(1));
+        cv.put(PASSWORD,  cursor.getString(2));
+        cv.put(MOBILE,  cursor.getString(3));
+        cv.put(ADRESS,cursor.getString(4));
+        cv.put(AREA,cursor.getString(5) );
+        cv.put(CNIC,cursor.getString(6));
+        //NullCoumnHack
+        if(cursor.getCount()>0) {
+            long update = db.update(DRIVER, cv, "DrverId=?", new String[]{String.valueOf(id)});
+            if (update == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        else
+            return false;
+    }
+    //Delete Driver
+    public boolean DeleteDriver(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+
+        Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(id)});
+
+        //NullCoumnHack
+        if(cursor.getCount()>0) {
+            long update = db.delete(DRIVER, "DrverId=?", new String[]{String.valueOf(id)});
+            if (update == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        else
+            return false;
+    }
+    //Delete bin
+    public boolean DeleteBin(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+
+
+        //NullCoumnHack
+        Cursor  cursor=db.rawQuery("Select * from Bin where BinId = ?",new String[]{String.valueOf(id)});
+
+        //NullCoumnHack
+        if(cursor.getCount()>0) {
+            long update = db.delete(BIN,  "BinId=?", new String[]{String.valueOf(id)});
+            if (update == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        else
+            return false;
+    }
+    //get bin data
+    public Cursor getBinData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor  cursor=db.rawQuery("Select * from Bin",null);
+
+        return cursor;
+    }
+    //get driver data
+    public Cursor getDriverData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor  cursor=db.rawQuery("Select * from Driver",null);
+
+        return cursor;
+    }
 
 }
