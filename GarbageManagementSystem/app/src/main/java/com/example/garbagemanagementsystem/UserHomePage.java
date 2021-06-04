@@ -35,4 +35,8 @@ public class UserHomePage extends AppCompatActivity {
         intent.putExtra("UserNameComplaint",username);
         startActivity(intent);
     }
+
+    public void OpenUserComplaint(View view) {
+
+    }
 }
