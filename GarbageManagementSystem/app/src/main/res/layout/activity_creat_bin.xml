@@ -54,6 +54,14 @@
         android:background="@color/purple_200"
 
         />
+
+    <EditText
+        android:id="@+id/Land"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:background="@color/purple_200"
+        android:hint="Enter Land Mark"></EditText>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,13 +70,7 @@
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
-    <EditText
-        android:id="@+id/Land"
-        android:layout_width="match_parent"
-        android:layout_height="30sp"
-        android:hint="Enter Land Mark"
-        android:background="@color/purple_200"
-        ></EditText>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

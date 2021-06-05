@@ -32,13 +32,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void creatbin(View view) {
-        Intent intent=new Intent(getApplicationContext(),CreatBin.class);
-        startActivity(intent);
-    }
 
-    public void creatdriver(View view) {
-        Intent intent=new Intent(getApplicationContext(),CreatDriver.class);
-        startActivity(intent);
-    }
 }

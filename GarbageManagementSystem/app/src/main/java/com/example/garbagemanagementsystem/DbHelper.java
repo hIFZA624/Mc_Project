@@ -235,7 +235,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(id)});
 
-<<<<<<< HEAD
+
         //NullCoumnHack
         if(cursor.getCount()>0) {
             long update = db.delete(DRIVER, "DrverId=?", new String[]{String.valueOf(id)});
@@ -283,7 +283,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return cursor;
     }
-=======
+
     public boolean addComplaint(UserComplaint customerModel){
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
@@ -310,7 +310,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 String title=cursor.getString(1);
                 String complaints=cursor.getString(2);
                 String username=cursor.getString(3);
->>>>>>> 8d2c47de5124592b09ae0b1cbdbe301850797139
+
 
                 UserComplaint complaint=new UserComplaint(title,complaints,username,id);
                 myList.add(complaint);
@@ -318,6 +318,61 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         db.close();
+
         return  myList;
+    }
+    public ArrayList<BinModel> getRecordsofBin(){
+        ArrayList<BinModel> binList=new ArrayList<BinModel>();
+        String query="SELECT * FROM "+BIN;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor= db.rawQuery(query,null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                int id=cursor.getInt(0);
+                String Area=cursor.getString(1);
+                String Locality=cursor.getString(2);
+                String LandMark=cursor.getString(3);
+                String City=cursor.getString(4);
+                String DriverEmail=cursor.getString(5);
+                String BestRout=cursor.getString(6);
+                String loadtype=cursor.getString(7);
+                String cyclicPeriod=cursor.getString(8);
+
+                BinModel bin= new BinModel(Area,Locality,LandMark,City,DriverEmail,BestRout ,loadtype,cyclicPeriod,id);
+
+                binList.add(bin);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return  binList;
+    }
+    public ArrayList<DriverModel> getRecordsofDriver(){
+        ArrayList<DriverModel> driverlist=new ArrayList<DriverModel>();
+        String query="SELECT * FROM "+DRIVER;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor= db.rawQuery(query,null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                int id=cursor.getInt(0);
+                String Name=cursor.getString(1);
+                String password=cursor.getString(2);
+                String Mobile=cursor.getString(3);
+                String Adress=cursor.getString(4);
+                String Area=cursor.getString(5);
+                String cnic=cursor.getString(6);
+
+                DriverModel driver= new DriverModel(Name,password,Mobile,Adress, Area,cnic,id);
+
+                driverlist.add(driver);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return  driverlist;
     }
 }
