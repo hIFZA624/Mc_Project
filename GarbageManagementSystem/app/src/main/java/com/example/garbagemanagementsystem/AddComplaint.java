@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,7 +20,7 @@ public class AddComplaint extends AppCompatActivity {
     Toolbar toolbar;
     EditText title;
     EditText complaint;
-
+String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +33,12 @@ public class AddComplaint extends AppCompatActivity {
         toggle.syncState();
         title = findViewById(R.id.titleof);
         complaint = findViewById(R.id.complaint);
+        Intent intent = getIntent();
+        username = intent.getStringExtra("UserNameComplaint");
     }
     public void aDDcOMPLAINT(View view) {
 
-        UserComplaint user = new UserComplaint(title.getText().toString(), complaint.getText().toString(), "mcsf19m020@pucit.edu.pk", 1);
+        UserComplaint user = new UserComplaint(title.getText().toString(), complaint.getText().toString(), username, 1);
         // Toast.makeText(UserRegistration.this, user.toString(), Toast.LENGTH_SHORT).show();
         DbHelper dbHelper = new DbHelper(AddComplaint.this);
         boolean b = dbHelper.addComplaint(user);

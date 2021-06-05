@@ -16,6 +16,7 @@ public class UserHomePage extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +27,16 @@ public class UserHomePage extends AppCompatActivity {
         toggle=new  ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        Intent intent = getIntent();
+        username = intent.getStringExtra("UserName");
     }
     public void OpenComplaint(View view) {
         Intent intent=new Intent(UserHomePage.this,AddComplaint.class);
+        intent.putExtra("UserNameComplaint",username);
         startActivity(intent);
+    }
+
+    public void OpenUserComplaint(View view) {
+
     }
 }
