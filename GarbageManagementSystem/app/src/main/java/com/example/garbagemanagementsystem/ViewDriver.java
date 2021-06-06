@@ -2,6 +2,7 @@ package com.example.garbagemanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,7 +24,7 @@ ListView listView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_driver);
         listView=findViewById(R.id.listviewdriver);
-        DbHelper dbHelper=new DbHelper(ViewDriver.this);
+        dbHelper=new DbHelper(ViewDriver.this);
         Area=new ArrayList<String>();
         Name=new ArrayList<String>();
         password=new ArrayList<String>();
@@ -45,7 +46,9 @@ ListView listView;
             cnic.add(d.getCNIC());
 
         }
-       DriverAdapter driveradapter= new DriverAdapter(this,Name,password,Mobile,Adress, Area,cnic,id);
+        AlertDialog.Builder builder=new AlertDialog.Builder(ViewDriver.this);
+
+        DriverAdapter driveradapter= new DriverAdapter(this,Name,password,Mobile,Adress, Area,cnic,id,dbHelper,builder);
 listView.setAdapter(driveradapter);
     }
 }

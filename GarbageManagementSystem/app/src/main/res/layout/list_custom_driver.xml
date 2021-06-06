@@ -120,12 +120,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/updatedriver"
         android:text="Update">
 
     </Button>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/deletedriver"
         android:text="Delete">
 
     </Button>

@@ -176,24 +176,26 @@ public class DbHelper extends SQLiteOpenHelper {
         return  myList;
     }
     //Update bin data
-    public boolean UpdateBin(int id) {
+    public boolean UpdateBin(BinModel bin) {
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
         ContentValues cv = new ContentValues();
 
         //NullCoumnHack
-        Cursor  cursor=db.rawQuery("Select * from Bin where BinId = ?",new String[]{String.valueOf(id)});
-        cv.put(BIN_AREA, cursor.getString(1));
-        cv.put(LOCALITY, cursor.getString(2));
-        cv.put(LANDMARK, cursor.getString(3));
-        cv.put(CITY,cursor.getString(4));
-        cv.put(DRIVER_EMAIL, cursor.getString(5));
-        cv.put(BEST_ROUT,cursor.getString(6));
-        cv.put(LOAD_TYPE, cursor.getString(7));
-        cv.put(CYCLIC_PERIOD,cursor.getString(8));
+
+        cv.put(BIN_AREA, bin.getBinArea());
+        cv.put(LOCALITY, bin.getLocality());
+        cv.put(LANDMARK, bin.getLandMak());
+        cv.put(CITY, bin.getCity());
+        cv.put(DRIVER_EMAIL, bin.getDriverEmail());
+        cv.put(BEST_ROUT, bin.getBestRout());
+        cv.put(LOAD_TYPE, bin.getLoad());
+        cv.put(CYCLIC_PERIOD, bin.getCyclicPeriod());
+        Cursor  cursor=db.rawQuery("Select * from Bin where BinId = ?",new String[]{String.valueOf(bin.getId())});
+
         //NullCoumnHack
         if(cursor.getCount()>0) {
-            long update = db.update(BIN, cv, "BinId=?", new String[]{String.valueOf(id)});
+            long update = db.update(BIN, cv, "BinId=?", new String[]{String.valueOf(bin.getId())});
             if (update == -1) {
                 return false;
             } else {
@@ -204,21 +206,21 @@ public class DbHelper extends SQLiteOpenHelper {
             return false;
     }
     //UPdate Driver
-    public boolean UpdateDriver(int id) {
+    public boolean UpdateDriver(DriverModel driver) {
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
         ContentValues cv = new ContentValues();
 
-        Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(id)});
-        cv.put(NAME,  cursor.getString(1));
-        cv.put(PASSWORD,  cursor.getString(2));
-        cv.put(MOBILE,  cursor.getString(3));
-        cv.put(ADRESS,cursor.getString(4));
-        cv.put(AREA,cursor.getString(5) );
-        cv.put(CNIC,cursor.getString(6));
+        Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(driver.getId())});
+        cv.put(NAME, driver.getName());
+        cv.put(PASSWORD, driver.getPassword());
+        cv.put(MOBILE, driver.getMobile());
+        cv.put(ADRESS,driver.getAdress());
+        cv.put(AREA, driver.getArea());
+        cv.put(CNIC, driver.getCNIC());
         //NullCoumnHack
         if(cursor.getCount()>0) {
-            long update = db.update(DRIVER, cv, "DrverId=?", new String[]{String.valueOf(id)});
+            long update = db.update(DRIVER, cv, "DrverId=?", new String[]{String.valueOf(driver.getId())});
             if (update == -1) {
                 return false;
             } else {

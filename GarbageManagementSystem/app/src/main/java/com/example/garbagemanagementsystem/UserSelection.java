@@ -36,11 +36,21 @@ public class UserSelection extends AppCompatActivity {
         startActivity(intent);
     }
     public void creatbin(View view) {
-        Intent intent=new Intent(getApplicationContext(),ViewBin.class);
+        Intent intent=new Intent(getApplicationContext(),CreatBin.class);
         startActivity(intent);
     }
 
     public void creatdriver(View view) {
+        Intent intent=new Intent(getApplicationContext(),CreatDriver.class);
+        startActivity(intent);
+    }
+
+    public void viewbin(View view) {
+        Intent intent=new Intent(getApplicationContext(),ViewBin.class);
+        startActivity(intent);
+    }
+
+    public void viewdriver(View view) {
         Intent intent=new Intent(getApplicationContext(),ViewDriver.class);
         startActivity(intent);
     }

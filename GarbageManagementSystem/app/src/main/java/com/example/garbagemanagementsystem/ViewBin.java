@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +35,7 @@ public class ViewBin extends AppCompatActivity {
         setContentView(R.layout.activity_view_bin);
 
         listView=findViewById(R.id.listviewbin);
-        DbHelper dbHelper=new DbHelper(ViewBin.this);
+        dbHelper=new DbHelper(ViewBin.this);
         Area=new ArrayList<String>();
         Locality=new ArrayList<String>();
         LandMark=new ArrayList<String>();
@@ -61,11 +62,14 @@ public class ViewBin extends AppCompatActivity {
 
 
         }
-        BinAdapter adapter=new BinAdapter(this,Area,Locality,LandMark,City,DriverEmail,BestRout,loadtype,cyclicPeriod,id);
+        AlertDialog.Builder builder=new AlertDialog.Builder(ViewBin.this);
+
+        BinAdapter adapter=new BinAdapter(this,Area,Locality,LandMark,City,DriverEmail,BestRout,loadtype,cyclicPeriod,id,dbHelper,builder);
      listView.setAdapter(adapter);
         /*,ArrayList<String> bBestRout, ArrayList<String> bloadtype, ArrayList<String> bcyclicPeriod, ArrayList<Integer> bid)
     {*/
 
     }
+
 
 }
