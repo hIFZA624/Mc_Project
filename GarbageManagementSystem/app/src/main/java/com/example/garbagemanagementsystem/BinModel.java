@@ -1,6 +1,8 @@
 package com.example.garbagemanagementsystem;
 
-public class BinModel {
+import java.io.Serializable;
+
+public class BinModel implements Serializable {
     private String BinArea;
 
     private String Locality;

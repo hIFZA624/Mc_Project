@@ -78,7 +78,7 @@ public class DriverAdapter  extends ArrayAdapter<String> {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dbHelper.DeleteDriver(did.get(position));
-                        notifyDataSetChanged();
+
 
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -96,7 +96,7 @@ public class DriverAdapter  extends ArrayAdapter<String> {
             @Override
             public void onClick(View v) {
 
-                /*DriverModel d=new DriverModel();
+               DriverModel d=new DriverModel();
                 d.setId(did.get(position));
                 d.setName(dName.get(position));
                 d.setPassword(dpassword.get(position));
@@ -105,15 +105,11 @@ public class DriverAdapter  extends ArrayAdapter<String> {
                 d.setArea(darea.get(position));
                 d.setCNIC(dcnic.get(position));
 
-                Boolean check=dbHelper.UpdateDriver(d);
-                if(check==true)
-                {
-                    Toast.makeText(context, "data updated", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(context, "data not updated", Toast.LENGTH_SHORT).show();
-                }
-*/
+                Intent intent=new Intent(context,updateDriver.class);
+                intent.putExtra("DriverModel",  d);
+                context.startActivity(intent);
+
+
 
 
             }

@@ -14,9 +14,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class BinAdapter extends ArrayAdapter<String> {
 
@@ -32,6 +34,7 @@ public class BinAdapter extends ArrayAdapter<String> {
     private final ArrayList<Integer> bid;
     DbHelper dbHelper;
     AlertDialog.Builder builder;
+
     public BinAdapter(Activity context, ArrayList<String> Areab, ArrayList<String> Locality, ArrayList<String> bLandMark, ArrayList<String> bCity,ArrayList<String> bDriverEmail,ArrayList<String> bBestRout, ArrayList<String> bloadtype, ArrayList<String> bcyclicPeriod, ArrayList<Integer> bid,DbHelper dbHelper,AlertDialog.Builder builder)
     {
         super(context,R.layout.listview_custom,Areab);
@@ -47,6 +50,7 @@ public class BinAdapter extends ArrayAdapter<String> {
         this.bid=bid;
         this.dbHelper=dbHelper;
         this.builder=builder;
+
     }
     @NonNull
     @Override
@@ -88,7 +92,7 @@ public class BinAdapter extends ArrayAdapter<String> {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                            dbHelper.DeleteBin(bid.get(position));
-                        notifyDataSetChanged();
+
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
@@ -103,6 +107,21 @@ public class BinAdapter extends ArrayAdapter<String> {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                BinModel b=new BinModel();
+                b.setId(bid.get(position));
+               b.setBinArea(Areabin.get(position));
+                b.setLocality(bLocality.get(position));
+               b.setDriverEmail(bDriverEmail.get(position));
+                b.setBestRout(bBestRout.get(position));
+               b.setLandMak(bLandMark.get(position));
+                b.setCity(bCity.get(position));
+                b.setLoad(bloadtype.get(position));
+                b.setCyclicPeriod(bcyclicPeriod.get(position));
+                Intent intent=new Intent(context,updateBin.class);
+
+                intent.putExtra("BinModel",  b);
+                context.startActivity(intent);
+
 
             }
         });

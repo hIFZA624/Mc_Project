@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class ViewBin extends AppCompatActivity {
     ArrayList<String> cyclicPeriod;
     ArrayList<Integer> id;
     DbHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,13 +64,20 @@ public class ViewBin extends AppCompatActivity {
 
 
         }
-        AlertDialog.Builder builder=new AlertDialog.Builder(ViewBin.this);
+        RefreshData();
 
-        BinAdapter adapter=new BinAdapter(this,Area,Locality,LandMark,City,DriverEmail,BestRout,loadtype,cyclicPeriod,id,dbHelper,builder);
-     listView.setAdapter(adapter);
         /*,ArrayList<String> bBestRout, ArrayList<String> bloadtype, ArrayList<String> bcyclicPeriod, ArrayList<Integer> bid)
     {*/
 
+    }
+
+    private void RefreshData() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(ViewBin.this);
+
+        BinAdapter adapter=new BinAdapter(this,Area,Locality,LandMark,City,DriverEmail,BestRout,loadtype,cyclicPeriod,id,dbHelper,builder);
+        listView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
     }
 
 

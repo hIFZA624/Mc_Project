@@ -4,31 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreatBin"
     android:orientation="vertical"
-    android:background="@color/cardview_light_background">
+    tools:context=".updateBin">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Form To Creat Bin"
+        android:text="Update Bin"
         android:textColor="@color/purple_500"
         android:textSize="40sp"
         android:background="@color/cardview_shadow_end_color"
         android:textStyle="italic"
         android:textAlignment="center"
         ></TextView>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Area"
-    android:textColor="@color/design_default_color_secondary_variant"
-    android:textSize="30sp"
-    style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Area"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
 
 
 
     <EditText
-        android:id="@+id/BinArea"
+        android:id="@+id/updateBinArea"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Area"
@@ -47,13 +46,14 @@
 
     <EditText
 
-        android:id="@+id/Locality"
+        android:id="@+id/updateLocality"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Locality"
         android:background="@color/purple_200"
 
         />
+
 
 
     <TextView
@@ -65,12 +65,11 @@
 
         ></TextView>
     <EditText
-        android:id="@+id/Land"
+        android:id="@+id/updateLand"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:background="@color/purple_200"
         android:hint="Enter Land Mark"></EditText>
-
 
     <TextView
         android:layout_width="match_parent"
@@ -81,7 +80,7 @@
         android:textSize="30sp"
         ></TextView>
     <EditText
-        android:id="@+id/City"
+        android:id="@+id/updateCity"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter City"
@@ -97,7 +96,7 @@
 
         ></TextView>
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/updateEmail"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Driver Email"
@@ -113,7 +112,7 @@
         ></TextView>
 
     <EditText
-        android:id="@+id/Rout"
+        android:id="@+id/updateRout"
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:hint="Enter Best Rout"
@@ -127,7 +126,7 @@
         android:background="@color/purple_200">
 
         <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
+            android:id="@+id/updateautoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -143,7 +142,7 @@
         android:background="@color/purple_200">
 
         <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView2"
+            android:id="@+id/updateautoCompleteTextView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -154,7 +153,7 @@
         android:id="@+id/creatbin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:onClick="AddBin"
+        android:text="Update"
+        android:onClick="updateBin"
         ></Button>
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.garbagemanagementsystem;
 
-public class DriverModel {
+import java.io.Serializable;
+
+public class DriverModel implements Serializable {
     private String Name;
     private String Password;
     private String Mobile;

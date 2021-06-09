@@ -4,157 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreatBin"
+    tools:context=".updateDriver"
     android:orientation="vertical"
     android:background="@color/cardview_light_background">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Form To Creat Bin"
+        android:text="Update Driver"
         android:textColor="@color/purple_500"
         android:textSize="40sp"
         android:background="@color/cardview_shadow_end_color"
         android:textStyle="italic"
         android:textAlignment="center"
         ></TextView>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Area"
-    android:textColor="@color/design_default_color_secondary_variant"
-    android:textSize="30sp"
-    style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
 
 
 
     <EditText
-        android:id="@+id/BinArea"
+        android:id="@+id/updatename"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Area"
+        android:hint="Enter Name"
         android:background="@color/purple_200"
+
         ></EditText>
 
 
     <TextView
         android:layout_width="228dp"
         android:layout_height="wrap_content"
-        android:text="Locality"
+        android:text="Password"
         android:textSize="30sp"
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
 
     <EditText
-
-        android:id="@+id/Locality"
+        android:id="@+id/updatepwd"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Locality"
+        android:hint="Enter Password"
         android:background="@color/purple_200"
 
         />
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Land Mark"
+        android:text="Mobile"
         android:textSize="30sp"
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
     <EditText
-        android:id="@+id/Land"
+        android:id="@+id/updatemobile"
         android:layout_width="match_parent"
         android:layout_height="30sp"
+        android:hint="Enter Mobile Number"
         android:background="@color/purple_200"
-        android:hint="Enter Land Mark"></EditText>
-
-
+        ></EditText>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="City"
+        android:text="Adress"
         android:textColor="@color/design_default_color_secondary_variant"
 
         android:textSize="30sp"
         ></TextView>
     <EditText
-        android:id="@+id/City"
+        android:id="@+id/updateadress"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter City"
+        android:hint="Enter Adress"
         android:background="@color/purple_200"
         ></EditText>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Assign Driver Email"
+        android:text="Area"
         android:textSize="30sp"
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/updatearea"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Driver Email"
+        android:hint="Enter Area"
         android:background="@color/purple_200"
         ></EditText>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Best Rout"
+        android:text="CNIC"
         android:textSize="30sp"
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
 
     <EditText
-        android:id="@+id/Rout"
+        android:id="@+id/updatecnic"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Best Rout"
+        android:hint="Enter CNIC Number"
         android:background="@color/purple_200"
         ></EditText>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200">
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:inputType="none"
-
-            android:text="Load Type" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/input"
-        android:background="@color/purple_200">
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:inputType="none"
-            android:text="Cycle Period" />
-    </com.google.android.material.textfield.TextInputLayout>
     <Button
-        android:id="@+id/creatbin"
+        android:id="@+id/creatdriver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:onClick="AddBin"
-        ></Button>
+        android:text="Update"
+        android:onClick="UpdateDriver" />
 </LinearLayout>

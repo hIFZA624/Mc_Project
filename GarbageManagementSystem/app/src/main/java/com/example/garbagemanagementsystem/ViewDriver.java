@@ -3,7 +3,9 @@ package com.example.garbagemanagementsystem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -46,9 +48,15 @@ ListView listView;
             cnic.add(d.getCNIC());
 
         }
+        RefreshDriver();
+    }
+
+    private void RefreshDriver() {
         AlertDialog.Builder builder=new AlertDialog.Builder(ViewDriver.this);
 
         DriverAdapter driveradapter= new DriverAdapter(this,Name,password,Mobile,Adress, Area,cnic,id,dbHelper,builder);
-listView.setAdapter(driveradapter);
+        listView.setAdapter(driveradapter);
+        driveradapter.notifyDataSetChanged();
     }
+
 }
