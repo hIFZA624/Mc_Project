@@ -105,17 +105,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Best Rout"
+        android:text="Source"
         android:textSize="30sp"
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
 
     <EditText
-        android:id="@+id/updateRout"
+        android:id="@+id/usorce"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Best Rout"
+        android:hint="Enter Surce"
+        android:background="@color/purple_200"
+        ></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Destination"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <EditText
+        android:id="@+id/udest"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Destination"
         android:background="@color/purple_200"
         ></EditText>
 

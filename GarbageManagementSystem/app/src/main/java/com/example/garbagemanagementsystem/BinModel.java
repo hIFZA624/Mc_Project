@@ -9,20 +9,23 @@ public class BinModel implements Serializable {
     private String LandMak;
     private String City;
     private String DriverEmail;
-    private String BestRout;
+    //private String BestRout;
+    private String Source;
+    private String Destination;
     private String Load;
     public String CyclicPeriod;
     int id;
     public  BinModel(){
 
     }
-    public BinModel(String BinArea, String Locality, String LandMak,  String City,String DriverEmail, String BestRout,String Load,String cyclicPeriod,int Id) {
+    public BinModel(String BinArea, String Locality, String LandMak,  String City,String DriverEmail, String Source,String Destination,String Load,String cyclicPeriod,int Id) {
         this.BinArea = BinArea;
         this.Locality= Locality;
         this.LandMak = LandMak;
         this.City = City;
+        this.Source=Source;
         this.DriverEmail=DriverEmail;
-        this.BestRout=BestRout;
+        this.Destination=Destination;
         this.Load=Load;
         this.CyclicPeriod=cyclicPeriod;
         this.Id=Id;
@@ -48,8 +51,21 @@ public class BinModel implements Serializable {
         DriverEmail = driverEmail;
     }
 
-    public void setBestRout(String bestRout) {
-        BestRout = bestRout;
+
+    public String getSource() {
+        return Source;
+    }
+
+    public void setSource(String source) {
+        Source = source;
+    }
+
+    public String getDestination() {
+        return Destination;
+    }
+
+    public void setDestination(String destination) {
+        Destination = destination;
     }
 
     public void setLoad(String load) {
@@ -86,9 +102,6 @@ public class BinModel implements Serializable {
         return DriverEmail;
     }
 
-    public String getBestRout() {
-        return BestRout;
-    }
 
     public String getLoad() {
         return Load;

@@ -35,7 +35,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String  LANDMARK= "LandMark";
     public static final String CITY = "City";
     public static final String DRIVER_EMAIL = "DriverEmail";
-    public static final String BEST_ROUT = "BestRute";
+    public static final String SOURCE = "Source";
+    public static final String DESTINATION = "Destination";
     public static final String LOAD_TYPE = "LoadType";
     public static final String CYCLIC_PERIOD = "CyclePeriod";
     public static final String BIN_ID = "BinId";
@@ -66,7 +67,7 @@ public class DbHelper extends SQLiteOpenHelper {
             String createTableSTatement2 = "CREATE TABLE " +DRIVER + "(" + DRIVER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + MOBILE + " Text ," + ADRESS + "Text," + AREA + "Text," + CNIC + "Text)";
             db.execSQL(createTableSTatement2);
             //CreateBinTable
-            String createTableSTatement3 = "CREATE TABLE " +BIN + "(" + BIN_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + BIN_AREA + " Text, " + LOCALITY + " Text, " + LANDMARK + " Text ," + CITY + "Text," + DRIVER_EMAIL + "Text," + BEST_ROUT + "Text," + LOAD_TYPE + "Text," + CYCLIC_PERIOD + "Text)";
+            String createTableSTatement3 = "CREATE TABLE " +BIN + "(" + BIN_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + BIN_AREA + " Text, " + LOCALITY + " Text, " + LANDMARK + " Text ," + CITY + " Text ," + DRIVER_EMAIL + " Text ," + SOURCE + " Text ," + DESTINATION + " Text ," + LOAD_TYPE + " Text ," + CYCLIC_PERIOD + " Text)";
             db.execSQL(createTableSTatement3);
             //Create Complaint Tabel
             String createTableSTatement4 = "CREATE TABLE " + TABLE_NAMES + "(" + COL_11 + " Integer PRIMARY KEY AUTOINCREMENT, " + COL_12 + " Text, " + COL_13 + " Text, " + COL_14 + " Text) ";
@@ -132,7 +133,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(LANDMARK, bin.getLandMak());
         cv.put(CITY, bin.getCity());
         cv.put(DRIVER_EMAIL, bin.getDriverEmail());
-        cv.put(BEST_ROUT, bin.getBestRout());
+        cv.put(SOURCE, bin.getSource());
+        cv.put(DESTINATION, bin.getDestination());
         cv.put(LOAD_TYPE, bin.getLoad());
         cv.put(CYCLIC_PERIOD, bin.getCyclicPeriod());
         //NullCoumnHack
@@ -188,7 +190,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(LANDMARK, bin.getLandMak());
         cv.put(CITY, bin.getCity());
         cv.put(DRIVER_EMAIL, bin.getDriverEmail());
-        cv.put(BEST_ROUT, bin.getBestRout());
+        cv.put(SOURCE, bin.getSource());
+        cv.put(DESTINATION, bin.getDestination());
         cv.put(LOAD_TYPE, bin.getLoad());
         cv.put(CYCLIC_PERIOD, bin.getCyclicPeriod());
         Cursor  cursor=db.rawQuery("Select * from Bin where BinId = ?",new String[]{String.valueOf(bin.getId())});
@@ -337,11 +340,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 String LandMark=cursor.getString(3);
                 String City=cursor.getString(4);
                 String DriverEmail=cursor.getString(5);
-                String BestRout=cursor.getString(6);
-                String loadtype=cursor.getString(7);
-                String cyclicPeriod=cursor.getString(8);
+                String source=cursor.getString(6);
+                String destin=cursor.getString(7);
+                String loadtype=cursor.getString(8);
+                String cyclicPeriod=cursor.getString(9);
 
-                BinModel bin= new BinModel(Area,Locality,LandMark,City,DriverEmail,BestRout ,loadtype,cyclicPeriod,id);
+                BinModel bin= new BinModel(Area,Locality,LandMark,City,DriverEmail,source,destin,loadtype,cyclicPeriod,id);
 
                 binList.add(bin);
             }while(cursor.moveToNext());

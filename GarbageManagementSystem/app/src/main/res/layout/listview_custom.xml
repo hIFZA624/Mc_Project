@@ -16,7 +16,7 @@
     <TextView
         android:id="@+id/binId"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
+        android:layout_height="20sp"
 
         android:background="@color/purple_200"
         ></TextView>
@@ -34,7 +34,7 @@
     <TextView
         android:id="@+id/BinArea"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
+        android:layout_height="20sp"
 
         android:background="@color/purple_200"></TextView>
 
@@ -51,9 +51,9 @@
     <TextView
         android:id="@+id/Loc"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
+        android:layout_height="20sp"
         android:background="@color/purple_200"
-        android:hint="Enter Locaicty"></TextView>
+        ></TextView>
 
     <TextView
         android:layout_width="match_parent"
@@ -66,9 +66,9 @@
     <TextView
         android:id="@+id/Land"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
+        android:layout_height="20sp"
         android:background="@color/purple_200"
-        android:hint="Enter Land Mark"></TextView>
+      ></TextView>
 
 
     <TextView
@@ -82,8 +82,8 @@
     <TextView
         android:id="@+id/City"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
-        android:hint="Enter City"
+        android:layout_height="20sp"
+
         android:background="@color/purple_200"
         ></TextView>
 
@@ -98,24 +98,40 @@
     <TextView
         android:id="@+id/dEmail"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
-        android:hint="Enter Driver Email"
+        android:layout_height="20sp"
+
         android:background="@color/purple_200"
         ></TextView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Best Rout"
+        android:text="Source"
         android:textSize="30sp"
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
 
     <TextView
-        android:id="@+id/bRout"
+        android:id="@+id/bsorce"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
-        android:hint="Enter Best Rout"
+        android:layout_height="20sp"
+
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Destination"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/bdest"
+        android:layout_width="match_parent"
+        android:layout_height="20sp"
+
         android:background="@color/purple_200"
         ></TextView>
     <TextView
@@ -130,8 +146,8 @@
     <TextView
         android:id="@+id/cyc"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
-        android:hint="Enter Best Rout"
+        android:layout_height="20sp"
+
         android:background="@color/purple_200"
         ></TextView>
     <TextView
@@ -146,8 +162,8 @@
     <TextView
         android:id="@+id/loadty"
         android:layout_width="match_parent"
-        android:layout_height="30sp"
-        android:hint="Enter LoadType"
+        android:layout_height="20sp"
+
         android:background="@color/purple_200"
         ></TextView>
     <Button

@@ -25,7 +25,8 @@ public class ViewBin extends AppCompatActivity {
     ArrayList<String> LandMark;
     ArrayList<String> City;
     ArrayList<String> DriverEmail;
-    ArrayList<String> BestRout;
+    ArrayList<String> source;
+    ArrayList<String> destin;
     ArrayList<String> loadtype;
     ArrayList<String> cyclicPeriod;
     ArrayList<Integer> id;
@@ -43,7 +44,8 @@ public class ViewBin extends AppCompatActivity {
         LandMark=new ArrayList<String>();
         City=new ArrayList<String>();
         DriverEmail=new ArrayList<String>();
-        BestRout=new ArrayList<String>();
+        source=new ArrayList<String>();
+        destin=new ArrayList<String>();
         loadtype=new ArrayList<String>();
         cyclicPeriod=new ArrayList<String>();
         id=new ArrayList<Integer>();
@@ -58,13 +60,15 @@ public class ViewBin extends AppCompatActivity {
             LandMark.add(b.getLocality());
             City.add(b.getCity());
             DriverEmail.add(b.getDriverEmail());
-            BestRout.add(b.getBestRout());
+            source.add(b.getSource());
+            destin.add(b.getDestination());
             loadtype.add(b.getLoad());
             cyclicPeriod.add(b.getCyclicPeriod());
 
 
         }
         RefreshData();
+
 
         /*,ArrayList<String> bBestRout, ArrayList<String> bloadtype, ArrayList<String> bcyclicPeriod, ArrayList<Integer> bid)
     {*/
@@ -74,7 +78,7 @@ public class ViewBin extends AppCompatActivity {
     private void RefreshData() {
         AlertDialog.Builder builder=new AlertDialog.Builder(ViewBin.this);
 
-        BinAdapter adapter=new BinAdapter(this,Area,Locality,LandMark,City,DriverEmail,BestRout,loadtype,cyclicPeriod,id,dbHelper,builder);
+        BinAdapter adapter=new BinAdapter(this,Area,Locality,LandMark,City,DriverEmail,source,destin,loadtype,cyclicPeriod,id,dbHelper,builder);
         listView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();

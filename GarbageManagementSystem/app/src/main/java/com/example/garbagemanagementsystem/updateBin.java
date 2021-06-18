@@ -16,7 +16,8 @@ public class updateBin extends AppCompatActivity {
     EditText Area;
     EditText Locality;
     EditText DriverEmail;
-    EditText BestRout;
+    EditText source;
+    EditText des;
     EditText LandMark;
     EditText City;
     AutoCompleteTextView drpbox2;
@@ -33,7 +34,8 @@ public class updateBin extends AppCompatActivity {
         Area=findViewById(R.id.updateBinArea);
         Locality=findViewById(R.id.updateLocality);
         DriverEmail=findViewById(R.id.updateEmail);
-        BestRout=findViewById(R.id.updateRout);
+        source=findViewById(R.id.usorce);
+        des=findViewById(R.id.udest);
         LandMark=findViewById(R.id.updateLand);
         City=findViewById(R.id.updateCity);
 
@@ -47,7 +49,8 @@ public class updateBin extends AppCompatActivity {
         Area.setText(binModel.getBinArea());
         Locality.setText(binModel.getLocality());
         DriverEmail.setText(binModel.getDriverEmail());
-        BestRout.setText(binModel.getBestRout());
+        source.setText(binModel.getSource());
+        des.setText(binModel.getDestination());
         LandMark.setText(binModel.getLandMak());
         City.setText(binModel.getCity());
 
@@ -65,7 +68,7 @@ public class updateBin extends AppCompatActivity {
     public void updateBin(View view) {
         String loadtype=drpbox1.getText().toString();
         String cyclicPeriod=drpbox2.getText().toString();
-        BinModel bin= new BinModel(Area.getText().toString(),Locality.getText().toString(),LandMark.getText().toString(),City.getText().toString(),DriverEmail.getText().toString(),BestRout.getText().toString() ,loadtype,cyclicPeriod,binModel.getId());
+        BinModel bin= new BinModel(Area.getText().toString(),Locality.getText().toString(),LandMark.getText().toString(),City.getText().toString(),DriverEmail.getText().toString(),source.getText().toString() ,des.getText().toString(),loadtype,cyclicPeriod,binModel.getId());
 
         DbHelper dbHelper = new DbHelper(updateBin.this);
         boolean b = dbHelper.UpdateBin(bin);

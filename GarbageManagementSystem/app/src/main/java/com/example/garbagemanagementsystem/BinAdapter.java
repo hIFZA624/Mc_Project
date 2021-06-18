@@ -28,14 +28,15 @@ public class BinAdapter extends ArrayAdapter<String> {
     private final ArrayList<String> bLandMark;
     private final ArrayList<String> bCity;
     private final ArrayList<String> bDriverEmail;
-    private final ArrayList<String> bBestRout;
+    private final ArrayList<String> bSource;
+    private final ArrayList<String> bDestination;
     private final ArrayList<String> bloadtype;
     private final ArrayList<String> bcyclicPeriod;
     private final ArrayList<Integer> bid;
     DbHelper dbHelper;
     AlertDialog.Builder builder;
 
-    public BinAdapter(Activity context, ArrayList<String> Areab, ArrayList<String> Locality, ArrayList<String> bLandMark, ArrayList<String> bCity,ArrayList<String> bDriverEmail,ArrayList<String> bBestRout, ArrayList<String> bloadtype, ArrayList<String> bcyclicPeriod, ArrayList<Integer> bid,DbHelper dbHelper,AlertDialog.Builder builder)
+    public BinAdapter(Activity context, ArrayList<String> Areab, ArrayList<String> Locality, ArrayList<String> bLandMark, ArrayList<String> bCity,ArrayList<String> bDriverEmail,ArrayList<String> bSource,ArrayList<String> bDestination, ArrayList<String> bloadtype, ArrayList<String> bcyclicPeriod, ArrayList<Integer> bid,DbHelper dbHelper,AlertDialog.Builder builder)
     {
         super(context,R.layout.listview_custom,Areab);
         this.context=context;
@@ -44,7 +45,8 @@ public class BinAdapter extends ArrayAdapter<String> {
         this.bLandMark=bLandMark;
         this.bCity=bCity;
         this.bDriverEmail=bDriverEmail;
-        this.bBestRout=bBestRout;
+        this.bSource=bSource;
+        this.bDestination=bDestination;
         this.bloadtype=bloadtype;
         this.bcyclicPeriod=bcyclicPeriod;
         this.bid=bid;
@@ -62,7 +64,8 @@ public class BinAdapter extends ArrayAdapter<String> {
         TextView Area=bincustom.findViewById(R.id.BinArea);
        TextView Locality=bincustom.findViewById(R.id.Loc);
        TextView DriverEmail=bincustom.findViewById(R.id.dEmail);
-        TextView BestRout=bincustom.findViewById(R.id.bRout);
+        TextView Source=bincustom.findViewById(R.id.bsorce);
+        TextView des=bincustom.findViewById(R.id.bdest);
         TextView LandMark=bincustom.findViewById(R.id.Land);
         TextView City=bincustom.findViewById(R.id.City);
         TextView load=bincustom.findViewById(R.id.loadty);;
@@ -75,7 +78,8 @@ public class BinAdapter extends ArrayAdapter<String> {
         Area.setText(Areabin.get(position));
         Locality.setText(bLocality.get(position));
         DriverEmail.setText(bDriverEmail.get(position));
-        BestRout.setText(bBestRout.get(position));
+        Source.setText(bSource.get(position));
+        des.setText(bDestination.get(position));
         LandMark.setText(bLandMark.get(position));
         City.setText(bCity.get(position));
         load.setText(bloadtype.get(position));
@@ -112,7 +116,8 @@ public class BinAdapter extends ArrayAdapter<String> {
                b.setBinArea(Areabin.get(position));
                 b.setLocality(bLocality.get(position));
                b.setDriverEmail(bDriverEmail.get(position));
-                b.setBestRout(bBestRout.get(position));
+                b.setSource(bSource.get(position));
+                b.setDestination(bDestination.get(position));
                b.setLandMak(bLandMark.get(position));
                 b.setCity(bCity.get(position));
                 b.setLoad(bloadtype.get(position));
