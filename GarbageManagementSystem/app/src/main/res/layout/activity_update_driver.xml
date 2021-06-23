@@ -35,6 +35,24 @@
         android:background="@color/purple_200"
 
         ></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+
+    <EditText
+        android:id="@+id/updatemaildriver"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter email"
+        android:background="@color/purple_200"
+
+        ></EditText>
 
 
     <TextView

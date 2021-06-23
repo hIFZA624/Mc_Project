@@ -45,6 +45,7 @@
 
         ></TextView>
 
+
     <EditText
 
         android:id="@+id/Locality"
@@ -135,6 +136,8 @@
         android:hint="Enter Destination"
         android:background="@color/purple_200"
         ></EditText>
+
+
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"

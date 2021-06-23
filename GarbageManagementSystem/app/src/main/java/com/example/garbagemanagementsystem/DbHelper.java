@@ -24,6 +24,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String NAME = "Name";
     public static final String  MOBILE= "Mobile";
     public static final String ADRESS = "Adress";
+    public static final String D_EMAIL = "DriverMail";
+    public static final String STATUS = "Status";
     public static final String PASSWORD = "Password";
     public static final String DRIVER_ID = "DrverId";
     public static final String CNIC = "CNIC";
@@ -64,7 +66,7 @@ public class DbHelper extends SQLiteOpenHelper {
             String createTableSTatement = "CREATE TABLE " + TABLE_NAME + "(" + COL_1 + " Integer PRIMARY KEY AUTOINCREMENT, " + COL_2 + " Text, " + COL_3 + " Text, " + COL_4 + " Text, " + COL_5 + " Text) ";
             db.execSQL(createTableSTatement);
             //CreateDriverTable
-            String createTableSTatement2 = "CREATE TABLE " +DRIVER + "(" + DRIVER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + MOBILE + " Text ," + ADRESS + "Text," + AREA + "Text," + CNIC + "Text)";
+            String createTableSTatement2 = "CREATE TABLE " +DRIVER + "(" + DRIVER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + MOBILE + " Text ," + ADRESS + " Text, " + AREA + " Text, " + CNIC + " Text, " + D_EMAIL + " Text, " + STATUS + " Text)";
             db.execSQL(createTableSTatement2);
             //CreateBinTable
             String createTableSTatement3 = "CREATE TABLE " +BIN + "(" + BIN_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + BIN_AREA + " Text, " + LOCALITY + " Text, " + LANDMARK + " Text ," + CITY + " Text ," + DRIVER_EMAIL + " Text ," + SOURCE + " Text ," + DESTINATION + " Text ," + LOAD_TYPE + " Text ," + CYCLIC_PERIOD + " Text)";
@@ -114,6 +116,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(ADRESS,driver.getAdress());
         cv.put(AREA, driver.getArea());
         cv.put(CNIC, driver.getCNIC());
+        cv.put(D_EMAIL, driver.getEMAIL());
+        cv.put(STATUS,driver.getStatus());
 
         //NullCoumnHack
         long insert = db.insert(DRIVER, null, cv);
@@ -221,6 +225,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(ADRESS,driver.getAdress());
         cv.put(AREA, driver.getArea());
         cv.put(CNIC, driver.getCNIC());
+        cv.put(D_EMAIL, driver.getEMAIL());
+        cv.put(STATUS, driver.getStatus());
         //NullCoumnHack
         if(cursor.getCount()>0) {
             long update = db.update(DRIVER, cv, "DrverId=?", new String[]{String.valueOf(driver.getId())});
@@ -370,8 +376,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 String Adress=cursor.getString(4);
                 String Area=cursor.getString(5);
                 String cnic=cursor.getString(6);
+                String Email=cursor.getString(7);
+                String Status=cursor.getString(8);
 
-                DriverModel driver= new DriverModel(Name,password,Mobile,Adress, Area,cnic,id);
+                DriverModel driver= new DriverModel(Name,password,Mobile,Adress, Area,cnic,id,Email,Status);
 
                 driverlist.add(driver);
             }while(cursor.moveToNext());
