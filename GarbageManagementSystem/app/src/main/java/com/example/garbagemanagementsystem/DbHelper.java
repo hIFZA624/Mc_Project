@@ -54,6 +54,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COL_12 = "Title";
     public static final String COL_13 = "Complaint";
     public static final String COL_14 = "CompalintName";
+    //dRIVER TABLE
     public DbHelper(@Nullable Context context) {
 
             super(context, "MyDB.db", null,  1);
@@ -101,6 +102,27 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
+    }
+    public Integer deleteUser(String id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME,"ID=?",new String[] {id});
+    }
+    public boolean updateUSER(String first,String last,String email,String id,String pass)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL_1,id);
+        cv.put(COL_2,first);
+        cv.put(COL_3, last);
+        cv.put(COL_4, email);
+        cv.put(COL_5, pass);
+        int delete=db.update(TABLE_NAME,cv,"ID=?",new String[] {id});
+        if(delete==-1)
+        {
+            return false;
+        }
+        return true;
     }
     //AddDriver
     public boolean addDriver( DriverModel driver) {
@@ -235,7 +257,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(id)});
 
-<<<<<<< HEAD
+
         //NullCoumnHack
         if(cursor.getCount()>0) {
             long update = db.delete(DRIVER, "DrverId=?", new String[]{String.valueOf(id)});
@@ -283,7 +305,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return cursor;
     }
-=======
+
     public boolean addComplaint(UserComplaint customerModel){
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
@@ -310,7 +332,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 String title=cursor.getString(1);
                 String complaints=cursor.getString(2);
                 String username=cursor.getString(3);
->>>>>>> 8d2c47de5124592b09ae0b1cbdbe301850797139
 
                 UserComplaint complaint=new UserComplaint(title,complaints,username,id);
                 myList.add(complaint);
@@ -320,4 +341,5 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
         return  myList;
     }
+
 }

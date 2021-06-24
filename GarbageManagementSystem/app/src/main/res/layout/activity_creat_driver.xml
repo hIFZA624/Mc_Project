@@ -115,7 +115,9 @@
         android:layout_height="30sp"
         android:hint="Enter CNIC Number"
         android:background="@color/purple_200"
-        ></EditText>
+
+        >
+    </EditText>
 
     <Button
         android:id="@+id/creatdriver"
