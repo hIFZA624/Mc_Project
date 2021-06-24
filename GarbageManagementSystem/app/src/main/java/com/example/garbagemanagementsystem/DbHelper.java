@@ -381,4 +381,30 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return  driverlist;
     }
+    public boolean UpdateUser(User u) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
+
+        //NullCoumnHack
+
+
+        cv.put(FIRST_NAME, u.getFirstName());
+          cv.put(LAST_NAME,u.getLastName());
+        cv.put(EMAIL_ID,u.getEmail());
+        cv.put(PASSWORD_ID, u.getPassword());
+        Cursor  cursor=db.rawQuery("Select * from UserTable where UserId = ?",new String[]{String.valueOf(u.getId())});
+
+        //NullCoumnHack
+        if(cursor.getCount()>0) {
+            long update = db.update(User_TABLE, cv, "UserId=?", new String[]{String.valueOf(u.getId())});
+            if (update == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        else
+            return false;
+    }
 }
