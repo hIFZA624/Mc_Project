@@ -14,6 +14,7 @@ public class CreatDriver extends AppCompatActivity {
     EditText password;
     EditText Area;
     EditText CNIC;
+    EditText Email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +25,14 @@ public class CreatDriver extends AppCompatActivity {
         password=findViewById(R.id.pwd);;
         Area=findViewById(R.id.area);;
         CNIC=findViewById(R.id.cnic);;
+        Email=findViewById(R.id.edriver);;
+
+
     }
 
     public void RegisterDriver(View view) {
-        DriverModel driver= new DriverModel(Name.getText().toString(),password.getText().toString(),Mobile.getText().toString(),Adress.getText().toString(), Area.getText().toString(),CNIC.getText().toString(),1);
+        String status= "false";
+        DriverModel driver= new DriverModel(Name.getText().toString(),password.getText().toString(),Mobile.getText().toString(),Adress.getText().toString(), Area.getText().toString(),CNIC.getText().toString(),1,Email.getText().toString(),status);
         DbHelper dbHelper = new DbHelper(CreatDriver.this);
         boolean b = dbHelper.addDriver(driver);
         if (b == true)

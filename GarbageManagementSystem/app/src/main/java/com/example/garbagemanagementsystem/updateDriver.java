@@ -15,6 +15,7 @@ public class updateDriver extends AppCompatActivity {
     EditText password;
     EditText Area;
     EditText CNIC;
+    EditText DEmail;
     DriverModel driverModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class updateDriver extends AppCompatActivity {
         password=findViewById(R.id.updatepwd);
         Area=findViewById(R.id.updatearea);
         CNIC=findViewById(R.id.updatecnic);
+        DEmail=findViewById(R.id.updatemaildriver);
         //set texts
         Name.setText(driverModel.getName());
         Mobile.setText(driverModel.getMobile());
@@ -34,10 +36,12 @@ public class updateDriver extends AppCompatActivity {
         password.setText(driverModel.getPassword());
         Area.setText(driverModel.getArea());
         CNIC.setText(driverModel.getCNIC());
+        DEmail.setText(driverModel.getEMAIL());
     }
 
     public void UpdateDriver(View view) {
-        DriverModel driver= new DriverModel(Name.getText().toString(),password.getText().toString(),Mobile.getText().toString(),Adress.getText().toString(), Area.getText().toString(),CNIC.getText().toString(),driverModel.getId());
+        String Status= "false";
+        DriverModel driver= new DriverModel(Name.getText().toString(),password.getText().toString(),Mobile.getText().toString(),Adress.getText().toString(), Area.getText().toString(),CNIC.getText().toString(),driverModel.getId(),DEmail.getText().toString(),Status);
         DbHelper dbHelper = new DbHelper(updateDriver.this);
 
         boolean b = dbHelper.UpdateDriver(driver);

@@ -24,6 +24,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String NAME = "Name";
     public static final String  MOBILE= "Mobile";
     public static final String ADRESS = "Adress";
+    public static final String D_EMAIL = "DriverMail";
+    public static final String STATUS = "Status";
     public static final String PASSWORD = "Password";
     public static final String DRIVER_ID = "DrverId";
     public static final String CNIC = "CNIC";
@@ -55,6 +57,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COL_12 = "Title";
     public static final String COL_13 = "Complaint";
     public static final String COL_14 = "CompalintName";
+    //dRIVER TABLE
     public DbHelper(@Nullable Context context) {
 
             super(context, "MyDB.db", null,  1);
@@ -64,7 +67,7 @@ public class DbHelper extends SQLiteOpenHelper {
             String createTableSTatement = "CREATE TABLE " + TABLE_NAME + "(" + COL_1 + " Integer PRIMARY KEY AUTOINCREMENT, " + COL_2 + " Text, " + COL_3 + " Text, " + COL_4 + " Text, " + COL_5 + " Text) ";
             db.execSQL(createTableSTatement);
             //CreateDriverTable
-            String createTableSTatement2 = "CREATE TABLE " +DRIVER + "(" + DRIVER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + MOBILE + " Text ," + ADRESS + "Text," + AREA + "Text," + CNIC + "Text)";
+            String createTableSTatement2 = "CREATE TABLE " +DRIVER + "(" + DRIVER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + MOBILE + " Text ," + ADRESS + " Text, " + AREA + " Text, " + CNIC + " Text, " + D_EMAIL + " Text, " + STATUS + " Text)";
             db.execSQL(createTableSTatement2);
             //CreateBinTable
             String createTableSTatement3 = "CREATE TABLE " +BIN + "(" + BIN_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + BIN_AREA + " Text, " + LOCALITY + " Text, " + LANDMARK + " Text ," + CITY + " Text ," + DRIVER_EMAIL + " Text ," + SOURCE + " Text ," + DESTINATION + " Text ," + LOAD_TYPE + " Text ," + CYCLIC_PERIOD + " Text)";
@@ -103,6 +106,27 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     }
+    public Integer deleteUser(String id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME,"ID=?",new String[] {id});
+    }
+    public boolean updateUSER(String first,String last,String email,String id,String pass)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL_1,id);
+        cv.put(COL_2,first);
+        cv.put(COL_3, last);
+        cv.put(COL_4, email);
+        cv.put(COL_5, pass);
+        int delete=db.update(TABLE_NAME,cv,"ID=?",new String[] {id});
+        if(delete==-1)
+        {
+            return false;
+        }
+        return true;
+    }
     //AddDriver
     public boolean addDriver( DriverModel driver) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -114,6 +138,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(ADRESS,driver.getAdress());
         cv.put(AREA, driver.getArea());
         cv.put(CNIC, driver.getCNIC());
+        cv.put(D_EMAIL, driver.getEMAIL());
+        cv.put(STATUS,driver.getStatus());
 
         //NullCoumnHack
         long insert = db.insert(DRIVER, null, cv);
@@ -221,6 +247,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(ADRESS,driver.getAdress());
         cv.put(AREA, driver.getArea());
         cv.put(CNIC, driver.getCNIC());
+        cv.put(D_EMAIL, driver.getEMAIL());
+        cv.put(STATUS, driver.getStatus());
         //NullCoumnHack
         if(cursor.getCount()>0) {
             long update = db.update(DRIVER, cv, "DrverId=?", new String[]{String.valueOf(driver.getId())});
@@ -315,7 +343,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 String title=cursor.getString(1);
                 String complaints=cursor.getString(2);
                 String username=cursor.getString(3);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 049269a701ea47c24fdd0358939e62702c3f601e
 
                 UserComplaint complaint=new UserComplaint(title,complaints,username,id);
                 myList.add(complaint);
@@ -326,6 +357,9 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return  myList;
     }
+<<<<<<< HEAD
+
+=======
     public ArrayList<BinModel> getRecordsofBin(){
         ArrayList<BinModel> binList=new ArrayList<BinModel>();
         String query="SELECT * FROM "+BIN;
@@ -370,8 +404,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 String Adress=cursor.getString(4);
                 String Area=cursor.getString(5);
                 String cnic=cursor.getString(6);
+                String Email=cursor.getString(7);
+                String Status=cursor.getString(8);
 
-                DriverModel driver= new DriverModel(Name,password,Mobile,Adress, Area,cnic,id);
+                DriverModel driver= new DriverModel(Name,password,Mobile,Adress, Area,cnic,id,Email,Status);
 
                 driverlist.add(driver);
             }while(cursor.moveToNext());
@@ -381,6 +417,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return  driverlist;
     }
+<<<<<<< HEAD
     public boolean UpdateUser(User u) {
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
@@ -407,4 +444,7 @@ public class DbHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+=======
+>>>>>>> 049269a701ea47c24fdd0358939e62702c3f601e
+>>>>>>> e4b47859bfb884b5e2e7f2942bb6a5e9fd26391c
 }
