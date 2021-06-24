@@ -1,40 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreatDriver"
-    android:orientation="vertical"
-    android:background="@color/cardview_light_background">
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Driver Register"
-        android:textColor="@color/purple_500"
-        android:textSize="40sp"
-        android:background="@color/cardview_shadow_end_color"
-        android:textStyle="italic"
-        android:textAlignment="center"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="id"
         android:textColor="@color/design_default_color_secondary_variant"
         android:textSize="30sp"
         style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
 
-
-
-    <EditText
-        android:id="@+id/edriver"
+    <TextView
+        android:id="@+id/dId"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Email"
-        android:background="@color/purple_200"
 
-        ></EditText>
+        android:background="@color/purple_200"
+        ></TextView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,14 +28,14 @@
 
 
 
-    <EditText
-        android:id="@+id/name"
+    <TextView
+        android:id="@+id/dname"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Name"
+
         android:background="@color/purple_200"
 
-        ></EditText>
+        ></TextView>
 
 
     <TextView
@@ -64,11 +47,11 @@
 
         ></TextView>
 
-    <EditText
-        android:id="@+id/pwd"
+    <TextView
+        android:id="@+id/dpwd"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Password"
+
         android:background="@color/purple_200"
 
         />
@@ -80,13 +63,13 @@
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
-    <EditText
-        android:id="@+id/mobile"
+    <TextView
+        android:id="@+id/dmobile"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Mobile Number"
+
         android:background="@color/purple_200"
-        ></EditText>
+        ></TextView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,13 +78,13 @@
 
         android:textSize="30sp"
         ></TextView>
-    <EditText
-        android:id="@+id/adress"
+    <TextView
+        android:id="@+id/dadress"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Adress"
+
         android:background="@color/purple_200"
-        ></EditText>
+        ></TextView>
 
     <TextView
         android:layout_width="match_parent"
@@ -111,13 +94,13 @@
         android:textColor="@color/design_default_color_secondary_variant"
 
         ></TextView>
-    <EditText
-        android:id="@+id/area"
+    <TextView
+        android:id="@+id/dArea"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter Area"
+
         android:background="@color/purple_200"
-        ></EditText>
+        ></TextView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -127,20 +110,25 @@
 
         ></TextView>
 
-    <EditText
-        android:id="@+id/cnic"
+    <TextView
+        android:id="@+id/dCnic"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:hint="Enter CNIC Number"
+
         android:background="@color/purple_200"
-
-        >
-    </EditText>
-
+        ></TextView>
     <Button
-        android:id="@+id/creatdriver"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:onClick="RegisterDriver" />
+        android:id="@+id/updatedriver"
+        android:text="Update">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deletedriver"
+        android:text="Delete">
+
+    </Button>
 </LinearLayout>

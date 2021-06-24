@@ -24,6 +24,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String NAME = "Name";
     public static final String  MOBILE= "Mobile";
     public static final String ADRESS = "Adress";
+    public static final String D_EMAIL = "DriverMail";
+    public static final String STATUS = "Status";
     public static final String PASSWORD = "Password";
     public static final String DRIVER_ID = "DrverId";
     public static final String CNIC = "CNIC";
@@ -35,7 +37,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String  LANDMARK= "LandMark";
     public static final String CITY = "City";
     public static final String DRIVER_EMAIL = "DriverEmail";
-    public static final String BEST_ROUT = "BestRute";
+    public static final String SOURCE = "Source";
+    public static final String DESTINATION = "Destination";
     public static final String LOAD_TYPE = "LoadType";
     public static final String CYCLIC_PERIOD = "CyclePeriod";
     public static final String BIN_ID = "BinId";
@@ -64,10 +67,10 @@ public class DbHelper extends SQLiteOpenHelper {
             String createTableSTatement = "CREATE TABLE " + TABLE_NAME + "(" + COL_1 + " Integer PRIMARY KEY AUTOINCREMENT, " + COL_2 + " Text, " + COL_3 + " Text, " + COL_4 + " Text, " + COL_5 + " Text) ";
             db.execSQL(createTableSTatement);
             //CreateDriverTable
-            String createTableSTatement2 = "CREATE TABLE " +DRIVER + "(" + DRIVER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + MOBILE + " Text ," + ADRESS + "Text," + AREA + "Text," + CNIC + "Text)";
+            String createTableSTatement2 = "CREATE TABLE " +DRIVER + "(" + DRIVER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + NAME + " Text, " + PASSWORD+ " Text, " + MOBILE + " Text ," + ADRESS + " Text, " + AREA + " Text, " + CNIC + " Text, " + D_EMAIL + " Text, " + STATUS + " Text)";
             db.execSQL(createTableSTatement2);
             //CreateBinTable
-            String createTableSTatement3 = "CREATE TABLE " +BIN + "(" + BIN_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + BIN_AREA + " Text, " + LOCALITY + " Text, " + LANDMARK + " Text ," + CITY + "Text," + DRIVER_EMAIL + "Text," + BEST_ROUT + "Text," + LOAD_TYPE + "Text," + CYCLIC_PERIOD + "Text)";
+            String createTableSTatement3 = "CREATE TABLE " +BIN + "(" + BIN_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + BIN_AREA + " Text, " + LOCALITY + " Text, " + LANDMARK + " Text ," + CITY + " Text ," + DRIVER_EMAIL + " Text ," + SOURCE + " Text ," + DESTINATION + " Text ," + LOAD_TYPE + " Text ," + CYCLIC_PERIOD + " Text)";
             db.execSQL(createTableSTatement3);
             //Create Complaint Tabel
             String createTableSTatement4 = "CREATE TABLE " + TABLE_NAMES + "(" + COL_11 + " Integer PRIMARY KEY AUTOINCREMENT, " + COL_12 + " Text, " + COL_13 + " Text, " + COL_14 + " Text) ";
@@ -135,6 +138,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(ADRESS,driver.getAdress());
         cv.put(AREA, driver.getArea());
         cv.put(CNIC, driver.getCNIC());
+        cv.put(D_EMAIL, driver.getEMAIL());
+        cv.put(STATUS,driver.getStatus());
 
         //NullCoumnHack
         long insert = db.insert(DRIVER, null, cv);
@@ -154,7 +159,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(LANDMARK, bin.getLandMak());
         cv.put(CITY, bin.getCity());
         cv.put(DRIVER_EMAIL, bin.getDriverEmail());
-        cv.put(BEST_ROUT, bin.getBestRout());
+        cv.put(SOURCE, bin.getSource());
+        cv.put(DESTINATION, bin.getDestination());
         cv.put(LOAD_TYPE, bin.getLoad());
         cv.put(CYCLIC_PERIOD, bin.getCyclicPeriod());
         //NullCoumnHack
@@ -198,24 +204,27 @@ public class DbHelper extends SQLiteOpenHelper {
         return  myList;
     }
     //Update bin data
-    public boolean UpdateBin(int id) {
+    public boolean UpdateBin(BinModel bin) {
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
         ContentValues cv = new ContentValues();
 
         //NullCoumnHack
-        Cursor  cursor=db.rawQuery("Select * from Bin where BinId = ?",new String[]{String.valueOf(id)});
-        cv.put(BIN_AREA, cursor.getString(1));
-        cv.put(LOCALITY, cursor.getString(2));
-        cv.put(LANDMARK, cursor.getString(3));
-        cv.put(CITY,cursor.getString(4));
-        cv.put(DRIVER_EMAIL, cursor.getString(5));
-        cv.put(BEST_ROUT,cursor.getString(6));
-        cv.put(LOAD_TYPE, cursor.getString(7));
-        cv.put(CYCLIC_PERIOD,cursor.getString(8));
+
+        cv.put(BIN_AREA, bin.getBinArea());
+        cv.put(LOCALITY, bin.getLocality());
+        cv.put(LANDMARK, bin.getLandMak());
+        cv.put(CITY, bin.getCity());
+        cv.put(DRIVER_EMAIL, bin.getDriverEmail());
+        cv.put(SOURCE, bin.getSource());
+        cv.put(DESTINATION, bin.getDestination());
+        cv.put(LOAD_TYPE, bin.getLoad());
+        cv.put(CYCLIC_PERIOD, bin.getCyclicPeriod());
+        Cursor  cursor=db.rawQuery("Select * from Bin where BinId = ?",new String[]{String.valueOf(bin.getId())});
+
         //NullCoumnHack
         if(cursor.getCount()>0) {
-            long update = db.update(BIN, cv, "BinId=?", new String[]{String.valueOf(id)});
+            long update = db.update(BIN, cv, "BinId=?", new String[]{String.valueOf(bin.getId())});
             if (update == -1) {
                 return false;
             } else {
@@ -226,21 +235,23 @@ public class DbHelper extends SQLiteOpenHelper {
             return false;
     }
     //UPdate Driver
-    public boolean UpdateDriver(int id) {
+    public boolean UpdateDriver(DriverModel driver) {
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
         ContentValues cv = new ContentValues();
 
-        Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(id)});
-        cv.put(NAME,  cursor.getString(1));
-        cv.put(PASSWORD,  cursor.getString(2));
-        cv.put(MOBILE,  cursor.getString(3));
-        cv.put(ADRESS,cursor.getString(4));
-        cv.put(AREA,cursor.getString(5) );
-        cv.put(CNIC,cursor.getString(6));
+        Cursor  cursor=db.rawQuery("Select * from Driver where DrverId = ?",new String[]{String.valueOf(driver.getId())});
+        cv.put(NAME, driver.getName());
+        cv.put(PASSWORD, driver.getPassword());
+        cv.put(MOBILE, driver.getMobile());
+        cv.put(ADRESS,driver.getAdress());
+        cv.put(AREA, driver.getArea());
+        cv.put(CNIC, driver.getCNIC());
+        cv.put(D_EMAIL, driver.getEMAIL());
+        cv.put(STATUS, driver.getStatus());
         //NullCoumnHack
         if(cursor.getCount()>0) {
-            long update = db.update(DRIVER, cv, "DrverId=?", new String[]{String.valueOf(id)});
+            long update = db.update(DRIVER, cv, "DrverId=?", new String[]{String.valueOf(driver.getId())});
             if (update == -1) {
                 return false;
             } else {
@@ -332,6 +343,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 String title=cursor.getString(1);
                 String complaints=cursor.getString(2);
                 String username=cursor.getString(3);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 049269a701ea47c24fdd0358939e62702c3f601e
 
                 UserComplaint complaint=new UserComplaint(title,complaints,username,id);
                 myList.add(complaint);
@@ -339,7 +354,68 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         db.close();
+
         return  myList;
     }
+<<<<<<< HEAD
 
+=======
+    public ArrayList<BinModel> getRecordsofBin(){
+        ArrayList<BinModel> binList=new ArrayList<BinModel>();
+        String query="SELECT * FROM "+BIN;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor= db.rawQuery(query,null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                int id=cursor.getInt(0);
+                String Area=cursor.getString(1);
+                String Locality=cursor.getString(2);
+                String LandMark=cursor.getString(3);
+                String City=cursor.getString(4);
+                String DriverEmail=cursor.getString(5);
+                String source=cursor.getString(6);
+                String destin=cursor.getString(7);
+                String loadtype=cursor.getString(8);
+                String cyclicPeriod=cursor.getString(9);
+
+                BinModel bin= new BinModel(Area,Locality,LandMark,City,DriverEmail,source,destin,loadtype,cyclicPeriod,id);
+
+                binList.add(bin);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return  binList;
+    }
+    public ArrayList<DriverModel> getRecordsofDriver(){
+        ArrayList<DriverModel> driverlist=new ArrayList<DriverModel>();
+        String query="SELECT * FROM "+DRIVER;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor= db.rawQuery(query,null);
+        if(cursor.moveToFirst())
+        {
+            do{
+                int id=cursor.getInt(0);
+                String Name=cursor.getString(1);
+                String password=cursor.getString(2);
+                String Mobile=cursor.getString(3);
+                String Adress=cursor.getString(4);
+                String Area=cursor.getString(5);
+                String cnic=cursor.getString(6);
+                String Email=cursor.getString(7);
+                String Status=cursor.getString(8);
+
+                DriverModel driver= new DriverModel(Name,password,Mobile,Adress, Area,cnic,id,Email,Status);
+
+                driverlist.add(driver);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return  driverlist;
+    }
+>>>>>>> 049269a701ea47c24fdd0358939e62702c3f601e
 }

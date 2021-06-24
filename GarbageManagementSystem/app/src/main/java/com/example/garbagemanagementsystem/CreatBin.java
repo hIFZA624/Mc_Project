@@ -20,7 +20,8 @@ String [] cycle;
     EditText Area;
     EditText Locality;
     EditText DriverEmail;
-    EditText BestRout;
+    EditText source;
+    EditText dest;
     EditText LandMark;
     EditText City;
 
@@ -36,12 +37,13 @@ ArrayAdapter<String> arrayAdapter2;
         Area=findViewById(R.id.BinArea);
         Locality=findViewById(R.id.Locality);
         DriverEmail=findViewById(R.id.Email);
-        BestRout=findViewById(R.id.Rout);
+        source=findViewById(R.id.sorce);
+        dest=findViewById(R.id.dest);
         LandMark=findViewById(R.id.Land);
         City=findViewById(R.id.City);
 
-        //load=getResources().getStringArray(R.array.Load);
-        //cycle=getResources().getStringArray(R.array.Cycle);
+        load=getResources().getStringArray(R.array.Load);
+        cycle=getResources().getStringArray(R.array.Cycle);
         drpbox1=findViewById(R.id.autoCompleteTextView);
         drpbox2=findViewById(R.id.autoCompleteTextView2);
 
@@ -59,7 +61,7 @@ ArrayAdapter<String> arrayAdapter2;
 
         String loadtype=drpbox1.getText().toString();
         String cyclicPeriod=drpbox2.getText().toString();
-        BinModel bin= new BinModel(Area.getText().toString(),Locality.getText().toString(),LandMark.getText().toString(),City.getText().toString(),DriverEmail.getText().toString(),BestRout.getText().toString() ,loadtype,cyclicPeriod,1);
+        BinModel bin= new BinModel(Area.getText().toString(),Locality.getText().toString(),LandMark.getText().toString(),City.getText().toString(),DriverEmail.getText().toString(),source.getText().toString() ,dest.getText().toString(),loadtype,cyclicPeriod,1);
 
         DbHelper dbHelper = new DbHelper(CreatBin.this);
         boolean b = dbHelper.addBin(bin);
