@@ -96,6 +96,8 @@ public class BinAdapter extends ArrayAdapter<String> {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                            dbHelper.DeleteBin(bid.get(position));
+                        Intent intent=new Intent(context,ViewBin.class);
+                        context.startActivity(intent);
 
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {
