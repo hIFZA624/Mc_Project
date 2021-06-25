@@ -57,6 +57,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String COL_12 = "Title";
     public static final String COL_13 = "Complaint";
     public static final String COL_14 = "CompalintName";
+    //dRIVER TABLE
     public DbHelper(@Nullable Context context) {
 
             super(context, "MyDB.db", null,  1);
@@ -104,6 +105,27 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
+    }
+    public Integer deleteUser(String id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME,"ID=?",new String[] {id});
+    }
+    public boolean updateUSER(String first,String last,String email,String id,String pass)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL_1,id);
+        cv.put(COL_2,first);
+        cv.put(COL_3, last);
+        cv.put(COL_4, email);
+        cv.put(COL_5, pass);
+        int delete=db.update(TABLE_NAME,cv,"ID=?",new String[] {id});
+        if(delete==-1)
+        {
+            return false;
+        }
+        return true;
     }
     //AddDriver
     public boolean addDriver( DriverModel driver) {
@@ -321,7 +343,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 String title=cursor.getString(1);
                 String complaints=cursor.getString(2);
                 String username=cursor.getString(3);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 049269a701ea47c24fdd0358939e62702c3f601e
 
                 UserComplaint complaint=new UserComplaint(title,complaints,username,id);
                 myList.add(complaint);
@@ -332,6 +357,9 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return  myList;
     }
+<<<<<<< HEAD
+
+=======
     public ArrayList<BinModel> getRecordsofBin(){
         ArrayList<BinModel> binList=new ArrayList<BinModel>();
         String query="SELECT * FROM "+BIN;
@@ -389,4 +417,34 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return  driverlist;
     }
+<<<<<<< HEAD
+    public boolean UpdateUser(User u) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
+
+        //NullCoumnHack
+
+
+        cv.put(FIRST_NAME, u.getFirstName());
+          cv.put(LAST_NAME,u.getLastName());
+        cv.put(EMAIL_ID,u.getEmail());
+        cv.put(PASSWORD_ID, u.getPassword());
+        Cursor  cursor=db.rawQuery("Select * from UserTable where UserId = ?",new String[]{String.valueOf(u.getId())});
+
+        //NullCoumnHack
+        if(cursor.getCount()>0) {
+            long update = db.update(User_TABLE, cv, "UserId=?", new String[]{String.valueOf(u.getId())});
+            if (update == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        else
+            return false;
+    }
+=======
+>>>>>>> 049269a701ea47c24fdd0358939e62702c3f601e
+>>>>>>> e4b47859bfb884b5e2e7f2942bb6a5e9fd26391c
 }

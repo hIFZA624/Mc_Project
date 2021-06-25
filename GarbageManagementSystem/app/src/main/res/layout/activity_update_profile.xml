@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfile"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/UpfirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:background="@color/white"
+        android:hint="First Name"
+        />
+    <EditText
+        android:id="@+id/UplastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:background="@color/white"
+        android:hint="Lsst Name"
+        />
+    <EditText
+        android:id="@+id/UpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:background="@color/white"
+        android:hint="Password"
+        />
+    <EditText
+        android:id="@+id/UpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:background="@color/white"
+        android:hint="Email"
+        />
+    <Button
+        android:id="@+id/UpdateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="updating"
+        android:text="Update"></Button>
+</LinearLayout>
