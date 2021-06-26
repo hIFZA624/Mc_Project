@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GarbageManagementSystem">
-        <activity android:name=".updateBin"></activity>
+        <activity android:name=".helloText"></activity>
+        <activity android:name=".postWork" />
+        <activity android:name=".ViewDetail" />
+        <activity android:name=".BestRouteAndWork" />
+        <activity android:name=".updateBin" />
         <activity android:name=".updateDriver" />
         <activity android:name=".ViewComplaint" />
         <activity android:name=".ViewComplaints" />

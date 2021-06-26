@@ -1,5 +1,4 @@
 package com.example.garbagemanagementsystem;
-
 import java.io.Serializable;
 
 public class BinModel implements Serializable {

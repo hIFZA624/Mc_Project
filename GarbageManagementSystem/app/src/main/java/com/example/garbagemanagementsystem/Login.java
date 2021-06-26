@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +48,32 @@ public class Login extends AppCompatActivity {
                     startActivity(intent2);
                 } else
                     Toast.makeText(Login.this, "UserName And Password is invalid", Toast.LENGTH_SHORT).show();
-            } else if (title.equals("User Login")) {
+            }
+            //driver login
+            else if (title.equals("Driver Login")) {
+                String temp1 = userName.getText().toString();
+                String temp2 = password.getText().toString();
+                DbHelper dbHelper = new DbHelper(Login.this);
+
+                BinModel bin=new BinModel();
+                bin=dbHelper.searchDriver(temp1);
+
+              if (bin.getDriverEmail()!=null) {
+               // if (temp1!=null) {
+                    Intent intent3 = new Intent(Login.this, BestRouteAndWork.class);
+                    intent3.putExtra("Login",bin);
+                    startActivity(intent3);
+                }
+////                //HardCoded driver login
+//                if (userName.getText().toString().equals("driver") && password.getText().toString().equals("driver")) {
+//                    Intent intent2 = new Intent(Login.this, BestRouteAndWork.class);
+//                    startActivity(intent2);
+//                }
+                else
+                    Toast.makeText(Login.this, "UserName And Password is invalid", Toast.LENGTH_SHORT).show();
+
+            }
+            else if (title.equals("User Login")) {
                 Toast.makeText(Login.this, "User Login", Toast.LENGTH_SHORT).show();
                 DbHelper dbHelper = new DbHelper(Login.this);
                 ArrayList<User> userlist = dbHelper.getAllRecords();

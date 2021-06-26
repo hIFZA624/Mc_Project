@@ -20,8 +20,23 @@
     </string-array>
 
 
+    <string-array name="Status">
+        <item>
+            Status
+        </item>
+        <item>
+            On Progress
+        </item>
+        <item>
+            Completed
+        </item>
+        <item>
+            In Complete
+        </item>
+    </string-array>
+
     <!-- <string name="open">Open</string>
     <string name="close">Close</string>-->
 
-    >>>>>>> d5b89c7a4515c83737ad610bee8a01c9405e898c
+  
 </resources>

@@ -5,12 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DbHelper extends SQLiteOpenHelper {
 
@@ -31,6 +29,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String CNIC = "CNIC";
     public static final String AREA = "Area";
     public static final String DRIVER = "Driver";
+
     //BinTable
     public static final String BIN_AREA = "BinArea";
     public static final String LOCALITY = "Locality";
@@ -389,4 +388,61 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return  driverlist;
     }
+    public BinModel searchDriver(String Login) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        //  ContentValues cv = new ContentValues();
+
+        Cursor cursor = db.rawQuery("Select * from BIN where  DriverEmail= ?", new String[]{String.valueOf(Login)});
+        BinModel driver=new BinModel();
+        if(cursor.moveToFirst())
+        {
+            do{
+                int id=cursor.getInt(0);
+                String Area=cursor.getString(1);
+                String Locality=cursor.getString(2);
+                String LandMark=cursor.getString(3);
+                String City=cursor.getString(4);
+                String DriverEmail=cursor.getString(5);
+                String source=cursor.getString(6);
+                String destin=cursor.getString(7);
+                String loadtype=cursor.getString(8);
+                String cyclicPeriod=cursor.getString(9);
+
+                driver= new BinModel(Area,Locality,LandMark,City,DriverEmail,source,destin,loadtype,cyclicPeriod,id);
+
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return  driver;
+    }
+    //UPdate Status
+    public boolean UpdateStatus(String email,String status) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
+
+        Cursor  cursor=db.rawQuery("Select * from Driver where DrverMail = ?",new String[]{String.valueOf(email)});
+        cv.put(NAME, cursor.getString(1));
+        cv.put(PASSWORD,cursor.getString(2));
+        cv.put(MOBILE,cursor.getString(3) );
+        cv.put(ADRESS,cursor.getString(4));
+        cv.put(AREA,cursor.getString(5) );
+        cv.put(CNIC,cursor.getString(6));
+        cv.put(D_EMAIL, email);
+        cv.put(STATUS, status);
+        //NullCoumnHack
+        if(cursor.getCount()>0) {
+            long update = db.update(DRIVER, cv, "DrverMail=?", new String[]{String.valueOf(email)});
+            if (update == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        else
+            return false;
+    }
+
 }
