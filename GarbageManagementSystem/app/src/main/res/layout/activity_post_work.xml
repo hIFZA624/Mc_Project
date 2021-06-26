@@ -1,45 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml version="2.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".postWork"-->
+<!--    android:orientation="vertical">-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#28C62F"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="45dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/driverEmail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:textColor="@android:color/holo_green_dark"-->
+<!--        android:textSize="32dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/binId"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:textColor="@android:color/holo_green_dark"-->
+<!--        android:textSize="32dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/area"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:textColor="@android:color/holo_green_dark"-->
+<!--        android:textSize="32dp" />-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="221dp"-->
+<!--        android:layout_height="42dp">-->
+
+<!--    </Spinner>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/submit"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:onClick="SubmitWorkAndBackToViewDetail"-->
+
+<!--        android:text="Submit"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="32dp"-->
+<!--        app:backgroundTint="@android:color/holo_blue_dark" />-->
+
+<!--</LinearLayout>-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".postWork"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context=".postWork">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#28C62F"
         android:gravity="center_horizontal"
         android:textAlignment="center"
+        android:text="POST WORK"
         android:textColor="@color/white"
         android:textSize="45dp" />
-
     <TextView
-        android:id="@+id/driverEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Driver Email"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:id="@+id/driverEmailPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="32dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bin Id"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:id="@+id/binIdPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         android:textColor="@android:color/holo_green_dark"
         android:textSize="32dp" />
     <TextView
-        android:id="@+id/binId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bin Area"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:id="@+id/areaPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         android:textColor="@android:color/holo_green_dark"
         android:textSize="32dp" />
     <TextView
-        android:id="@+id/area"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:text="Select your status"
         android:textColor="@android:color/holo_green_dark"
-        android:textSize="32dp" />
-
+        android:textSize="30sp"
+        />
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerofview"
         android:layout_width="221dp"
         android:layout_height="42dp">
 
@@ -55,6 +139,7 @@
         android:text="Submit"
         android:textAlignment="center"
         android:textSize="32dp"
-        app:backgroundTint="@android:color/holo_blue_dark" />
+        app:backgroundTint="@android:color/holo_blue_dark" >
 
+    </Button>
 </LinearLayout>
