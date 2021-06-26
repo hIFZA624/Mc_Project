@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wastemanagementsystem">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WasteManagementSystem">
+        <activity android:name=".WorkRepport"></activity>
+        <activity android:name=".postWork" />
+        <activity android:name=".UpdatePofile" />
+        <activity android:name=".ViewDetail" />
+        <activity android:name=".BestRouteAndActivity" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".viewadmincomplaint" />
+        <activity android:name=".updateDriver" />
+        <activity android:name=".ViewDriver" />
+        <activity android:name=".CreatDriver" />
+        <activity android:name=".ViewBin" />
+        <activity android:name=".updateBin" />
+        <activity android:name=".CreatBin" />
+        <activity android:name=".DetailUser" />
+        <activity android:name=".DetailsComplaint" />
+        <activity android:name=".ViewComplaints" />
+        <activity android:name=".CreateBin" />
+        <activity android:name=".ViewComplaint" />
+        <activity android:name=".UserHomePage" />
+        <activity android:name=".AddComplaint" />
+        <activity android:name=".UserDetails" />
+        <activity android:name=".AdminHomePage" />
+        <activity android:name=".Login" />
+        <activity android:name=".UserSelection" />
+        <activity android:name=".UserRegistration" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

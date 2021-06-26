@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_gravity="center_horizontal"
+    tools:context=".ViewDetail">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0ECD16"
+        android:backgroundTint="@color/material_on_surface_emphasis_high_type"
+        android:gravity="center_horizontal"
+        android:text="View Detail"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="45dp"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/binidofbin"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/areaofbin"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/localityofbin"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cityofbin"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sourceofbin"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/destinationofbin"
+        android:textSize="25dp"
+        />
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_source"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@android:drawable/editbox_background"-->
+    <!--        android:hint="Enter Source Location"-->
+    <!--        android:padding="12dp"-->
+    <!--        android:textColor="#3F51B5" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_destination"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="8dp"-->
+    <!--        android:background="@android:drawable/editbox_background"-->
+    <!--        android:hint="Enter Destination Location"-->
+    <!--        android:padding="12dp"-->
+    <!--        android:textColor="#3F51B5" />-->
+
+    <Button
+        android:id="@+id/bt_track"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Display track"
+        app:backgroundTint="@android:color/holo_red_light" />
+
+    <Button
+        android:id="@+id/bt_update"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Update"
+        android:onClick="postwork"
+        app:backgroundTint="@android:color/holo_red_light" />
+</LinearLayout>

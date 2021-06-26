@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/two"
+    android:id="@+id/draweruser"
+    tools:context=".AddComplaint">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+android:id="@+id/navmenuuser"
+        android:layout_gravity="start"
+        >
+    </com.google.android.material.navigation.NavigationView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+android:id="@+id/toolbaruser"
+            app:title="User DashBoard"
+            app:titleTextColor="@color/black"
+            android:background="@color/colornav"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Add Complaint"
+            android:textColor="@color/black"
+            android:id="@+id/title"
+            android:textSize="30sp"
+            android:layout_marginTop="100dp"
+            />
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="120dp"
+            android:id="@+id/imd"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/images"
+            />
+
+        <EditText
+            android:id="@+id/titleof"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imd"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="24dp"
+            android:inputType="textPersonName"
+            android:hint="Enter Title" />
+        <EditText
+            android:id="@+id/complaint"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:ems="10"
+            android:layout_below="@id/titleof"
+            android:inputType="text|textMultiLine"
+            android:textSize="24dp"
+            android:layout_marginTop="10dp"
+            android:hint="Enter Complaint"
+            android:scrollbars="vertical"
+            android:layout_centerHorizontal="true"
+            android:gravity="top"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/complaint"
+      android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:onClick="aDDcOMPLAINT"
+            android:text="Add Complaint"
+            android:textSize="20dp"
+            app:backgroundTint="#D36767">
+        </Button>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

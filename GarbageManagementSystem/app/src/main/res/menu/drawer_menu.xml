@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+<group android:checkableBehavior="single">
+
+    <item android:id="@+id/nav_Home"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"></item>
+
+    <item android:id="@+id/nav_creatBin"
+        android:title="CreatBin"
+        android:icon="@drawable/ic_baseline_auto_delete_24"></item>
+
+    <item android:id="@+id/nav_ViewBin"
+        android:title="ViewBin"
+        android:icon="@drawable/ic_baseline_delete_sweep_24"></item>
+
+    <item android:id="@+id/nav_CreatDriver"
+        android:title="CreatDriver"
+        android:icon="@drawable/ic_baseline_directions_car_24"></item>
+
+    <item android:id="@+id/nav_ViewDriver"
+        android:title="ViewDriver"
+        android:icon="@drawable/ic_baseline_electric_car_24"></item>
+
+    <item android:id="@+id/nav_UserProfile"
+        android:title="UserDetails"
+        android:icon="@drawable/ic_baseline_supervised_user_circle_24"></item>
+
+    <item android:id="@+id/nav_Complaints"
+        android:title="Complaints"
+        android:icon="@drawable/ic_baseline_add_comment_24"></item>
+
+    <item android:id="@+id/nav_Report"
+        android:title="Report"
+        android:icon="@drawable/ic_baseline_report_24"></item>
+    <item android:id="@+id/nav_Logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_baseline_lock_open_24"></item>
+</group>
+
+</menu>

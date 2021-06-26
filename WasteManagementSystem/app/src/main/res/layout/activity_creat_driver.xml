@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/draweradddriver"
+    tools:context=".CreatDriver">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navmenuadddriver"
+        android:layout_gravity="start"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbaradddriver"
+        app:title="Admin DashBorad"
+        app:titleTextColor="@color/black"
+        android:background="@color/colornav"/>
+    <ScrollView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbaradddriver"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register Driver"
+        android:textColor="@color/purple_500"
+        android:textSize="40sp"
+        android:background="@color/cardview_shadow_end_color"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+
+    <EditText
+        android:id="@+id/edriver"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Email"
+        android:background="@color/purple_200"
+
+        ></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Name"
+        android:background="@color/purple_200"
+
+        ></EditText>
+
+
+    <TextView
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Password"
+        android:background="@color/purple_200"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <EditText
+        android:id="@+id/mobile"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Mobile Number"
+        android:background="@color/purple_200"
+        ></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adress"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        android:textSize="30sp"
+        ></TextView>
+    <EditText
+        android:id="@+id/adress"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Adress"
+        android:background="@color/purple_200"
+        ></EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Area"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <EditText
+        android:id="@+id/area"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter Area"
+        android:background="@color/purple_200"
+        ></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CNIC"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <EditText
+        android:id="@+id/cnic"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:hint="Enter CNIC Number"
+        android:background="@color/purple_200"
+        ></EditText>
+
+    <Button
+        android:id="@+id/creatdriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:onClick="RegisterDriver" />
+</LinearLayout>
+    </ScrollView>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -78,6 +78,8 @@ public class DriverAdapter  extends ArrayAdapter<String> {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dbHelper.DeleteDriver(did.get(position));
+                        Intent intent=new Intent(context,ViewDriver.class);
+                        context.startActivity(intent);
 
 
                     }
