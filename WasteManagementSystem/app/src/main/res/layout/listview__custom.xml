@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID"
+
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+    <TextView
+        android:id="@+id/binId"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Area"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+    <TextView
+        android:id="@+id/BinArea"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"></TextView>
+
+    <TextView
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:text="Locality"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+
+    <TextView
+        android:id="@+id/Loc"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Land Mark"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <TextView
+        android:id="@+id/Land"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        android:textSize="30sp"
+        ></TextView>
+    <TextView
+        android:id="@+id/City"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assign Driver Email"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <TextView
+        android:id="@+id/dEmail"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/bsorce"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Destination"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/bdest"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cyclic Period"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/cyc"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LoadType"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/loadty"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/updateBin"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#CDDC39"
+        android:text="Update"></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/deleteBin"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D33535"
+        android:text="Delete"></Button>
+    </LinearLayout>
+</LinearLayout>

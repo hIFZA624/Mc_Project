@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".updateBin">
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navmenuaddbin"
+        android:layout_gravity="start"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbaraddbin"
+        app:title="Admin DashBorad"
+        app:titleTextColor="@color/black"
+        android:background="@color/colornav"/>
+    <ScrollView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbaraddbin"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/image"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Bin"
+            android:textColor="@color/purple_500"
+            android:textSize="40sp"
+            android:background="@color/cardview_shadow_end_color"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            ></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Area"
+            android:textColor="@color/design_default_color_secondary_variant"
+            android:textSize="30sp"
+            style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+
+        <EditText
+            android:id="@+id/updateBinArea"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:hint="Enter Area"
+            android:background="@color/purple_200"
+            ></EditText>
+
+
+        <TextView
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:text="Locality"
+            android:textSize="30sp"
+            android:textColor="@color/design_default_color_secondary_variant"
+
+            ></TextView>
+
+        <EditText
+
+            android:id="@+id/updateLocality"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:hint="Enter Locality"
+            android:background="@color/purple_200"
+
+            />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Land Mark"
+            android:textSize="30sp"
+            android:textColor="@color/design_default_color_secondary_variant"
+
+            ></TextView>
+        <EditText
+            android:id="@+id/updateLand"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:background="@color/purple_200"
+            android:hint="Enter Land Mark">
+
+        </EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:textColor="@color/design_default_color_secondary_variant"
+
+            android:textSize="30sp"
+            >
+
+        </TextView>
+        <EditText
+            android:id="@+id/updateCity"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:hint="Enter City"
+            android:background="@color/purple_200"
+            >
+
+        </EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assign Driver Email"
+            android:textSize="30sp"
+            android:textColor="@color/design_default_color_secondary_variant"
+
+            >
+
+        </TextView>
+        <EditText
+            android:id="@+id/updateEmail"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:hint="Enter Driver Email"
+            android:background="@color/purple_200"
+            >
+
+        </EditText>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Source"
+            android:textSize="30sp"
+            android:textColor="@color/design_default_color_secondary_variant"
+
+            >
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/usorce"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:hint="Enter Surce"
+            android:background="@color/purple_200"
+            >
+
+
+        </EditText>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Destination"
+            android:textSize="30sp"
+            android:textColor="@color/design_default_color_secondary_variant"
+
+            ></TextView>
+
+        <EditText
+            android:id="@+id/udest"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:hint="Enter Destination"
+            android:background="@color/purple_200"
+            >
+
+        </EditText>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/purple_200">
+
+            <AutoCompleteTextView
+                android:id="@+id/updateautoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+
+                android:text="Load Type" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/input"
+            android:background="@color/purple_200">
+
+            <AutoCompleteTextView
+                android:id="@+id/updateautoCompleteTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:text="Cycle Period" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/creatbin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Update"
+            android:onClick="updateBin"
+            >
+
+        </Button>
+    </LinearLayout>
+    </ScrollView>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

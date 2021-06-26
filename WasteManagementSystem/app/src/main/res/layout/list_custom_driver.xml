@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+    <TextView
+        android:id="@+id/dId"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+
+    <TextView
+        android:id="@+id/dnamemail"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        style="@style/ThemeOverlay.AppCompat.Dark"></TextView>
+
+
+
+    <TextView
+        android:id="@+id/dname"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/dpwd"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+
+        />
+    <TextView
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/dworkstatus"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <TextView
+        android:id="@+id/dmobile"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adress"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        android:textSize="30sp"
+        ></TextView>
+    <TextView
+        android:id="@+id/dadress"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Area"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+    <TextView
+        android:id="@+id/dArea"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CNIC"
+        android:textSize="30sp"
+        android:textColor="@color/design_default_color_secondary_variant"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/dCnic"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+android:padding="2dp"
+        android:background="@color/purple_200"
+        ></TextView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="30dp"
+       >
+
+        <Button
+            android:id="@+id/updatedriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            app:backgroundTint="#CDDC39"
+           >
+
+        </Button>
+
+        <Button
+            android:id="@+id/deletedriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Delete"
+            app:backgroundTint="#D33535"></Button>
+    </LinearLayout>
+
+</LinearLayout>
